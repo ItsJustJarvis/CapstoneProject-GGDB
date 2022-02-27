@@ -28,6 +28,18 @@
         visibility: hidden;
     }
 
+    &:hover {
+        .card__content {
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            height: 50%;
+        }
+
+        .card__details {
+            visibility: visible;
+        }
+    }
 
     img {
         width: 100%;
