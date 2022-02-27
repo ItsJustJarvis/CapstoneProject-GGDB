@@ -1,1 +1,36 @@
 @use "config" as *;
+
+.results {
+    @include page-section;
+}
+
+.card {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+    color: $text-dark;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    height: 100%;
+
+    &__content {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        @include transition-ease;
+    }
+
+    &__details {
+        position: absolute;
+        bottom: 0;
+        list-style-type: none;
+        text-align: left;
+        padding: 0.5rem;
+        visibility: hidden;
+    }
+
+
+    img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+}
