@@ -20,3 +20,10 @@ $accent-green: #39ff14;
 $menu-grey-light: #696969;
 $menu-grey-dark: #383838;
 
+@mixin flex-display($direction, $wrap, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    align-items: $align;
+    justify-content: $justify;
+}
