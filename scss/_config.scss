@@ -36,6 +36,10 @@ $menu-grey-dark: #383838;
     gap: 2rem;
 }
 
+@mixin transition-ease {
+    transition: all 0.2s ease-in-out;
+}
+
 @mixin media-md {
     @media screen and (min-width: 768px) {
         @content;
