@@ -4,15 +4,12 @@
     @include page-section;
 
     &__bar {
-        @include flex-display(row, no-wrap, center, space-between);
+        @include flex-display(row, wrap, center, space-between);
         width: 100%;
 
-        .entry {
-            height: 2rem;
-            width: 500px;
-            background-color: lightgrey;
-            border-radius: 0.5rem;
-        }
+        &__container {
+            @include flex-display(row, no-wrap, center, space-between);
+            width: 75%;
 
         .submit-button,
         .filter-button {
