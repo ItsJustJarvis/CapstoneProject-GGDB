@@ -40,29 +40,54 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  position: relative;
 }
 .search__bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.search__bar__container {
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 75%;
 }
-.search__bar .entry {
+.search__bar__container .entry {
   height: 2rem;
-  width: 500px;
+  width: 80%;
   background-color: lightgrey;
   border-radius: 0.5rem;
 }
-.search__bar .submit-button,
-.search__bar .filter-button {
+.search__bar__container .submit-button,
+.search__bar__container .filter-button {
+  background-color: black;
+  color: white;
+  border-style: none;
+  border-radius: 0.5rem;
+  width: 3rem;
   height: 2rem;
   padding: 0.25rem;
 }
+.search__bar__container .submit-button:hover,
+.search__bar__container .filter-button:hover {
+  color: #39ff14;
+  cursor: pointer;
+}
+.search__bar__container .filter-button {
+  margin-left: auto;
+}
 .search__form {
   display: none;
-  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  bottom: -400px;
+  z-index: 2;
   padding: 1rem;
 }
 .search__form p {
@@ -177,10 +202,11 @@
 }
 
 html {
-  background: url(../img/PolygonalBackground.svg) center center/cover no-repeat fixed, black;
+  background: url(../img/PolygonalBackground.svg) center/cover no-repeat fixed, black;
 }
 
 body {
+  background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   height: 100%;
   font-family: "Roboto", sans-serif;
@@ -209,7 +235,7 @@ img {
 }
 
 header {
-  background: linear-gradient(black, rgba(0, 0, 0, 0));
+  background: linear-gradient(black, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
 }
 
 .highlight {
@@ -227,7 +253,7 @@ main {
 }
 
 footer {
-  background: linear-gradient(rgba(0, 0, 0, 0), black);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), black);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
