@@ -44,6 +44,7 @@
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
     position: relative;
     height: 100%;
+    text-align: center;
 
     &__content {
         width: 100%;
@@ -59,6 +60,10 @@
         text-align: left;
         padding: 0.5rem;
         visibility: hidden;
+
+        li {
+            padding-top: 0.5rem;
+        }
     }
 
     &:hover {
@@ -66,7 +71,7 @@
             background-color: white;
             position: absolute;
             bottom: 0;
-            height: 50%;
+            height: 45%;
         }
 
         .card__details {
