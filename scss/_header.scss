@@ -1,0 +1,12 @@
+@use "config" as *;
+
+.header {
+    @include page-section;
+    width: 75vw;
+    margin-top: 0;
+
+    &__content {
+        @include flex-display(row, wrap, center, space-between);
+        padding: 1rem 0;
+    }
+}
