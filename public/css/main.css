@@ -55,10 +55,7 @@
   background-color: lightgrey;
   border-radius: 0.5rem;
 }
-.search__bar .submit-button {
-  height: 2rem;
-  padding: 0.25rem;
-}
+.search__bar .submit-button,
 .search__bar .filter-button {
   height: 2rem;
   padding: 0.25rem;
