@@ -11,3 +11,6 @@ import {toggleForm} from "./modules/collapse.js";
 
 let showFilters = document.querySelector(".filter-button");
 showFilters.addEventListener("click", toggleForm);
+
+let cancelFilters = document.querySelector(".cancel-filters");
+cancelFilters.addEventListener("click", toggleForm);
