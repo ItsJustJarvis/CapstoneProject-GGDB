@@ -13,6 +13,9 @@
   width: 70vw;
   margin-top: 0;
 }
+.header:last-of-type {
+  margin-bottom: 5rem;
+}
 .header__content {
   display: flex;
   flex-direction: row;
@@ -20,6 +23,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+}
+.header__content .profile-image {
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 
 .about {
@@ -29,6 +36,9 @@
   grid-template-columns: 1fr;
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
+}
+.about:last-of-type {
+  margin-bottom: 5rem;
 }
 .about__message {
   grid-column: 2/-1;
@@ -41,6 +51,9 @@
   grid-template-columns: 1fr;
   gap: 2rem;
   position: relative;
+}
+.search:last-of-type {
+  margin-bottom: 5rem;
 }
 .search__bar {
   display: flex;
@@ -164,6 +177,55 @@
   grid-template-columns: 1fr;
   gap: 2rem;
 }
+.results:last-of-type {
+  margin-bottom: 5rem;
+}
+.results__header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: initial;
+}
+.results__views {
+  margin-left: auto;
+}
+.results__views .grid-view,
+.results__views .list-view {
+  background-color: black;
+  color: white;
+  border-style: none;
+  border-radius: 0.5rem;
+  width: 3rem;
+  height: 2rem;
+  padding: 0.25rem;
+}
+.results__views .grid-view:hover,
+.results__views .list-view:hover {
+  color: #39ff14;
+  cursor: pointer;
+}
+.results__output {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+.results__footer {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+.results__footer .show-more {
+  background-color: black;
+  color: white;
+  border-style: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.results__footer .show-more:hover {
+  color: #39ff14;
+  cursor: pointer;
+}
 
 .card {
   background-color: rgba(255, 255, 255, 0.3);
@@ -172,6 +234,7 @@
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
   position: relative;
   height: 100%;
+  text-align: center;
 }
 .card__content {
   width: 100%;
@@ -187,11 +250,14 @@
   padding: 0.5rem;
   visibility: hidden;
 }
+.card__details li {
+  padding-top: 0.5rem;
+}
 .card:hover .card__content {
   background-color: white;
   position: absolute;
   bottom: 0;
-  height: 50%;
+  height: 45%;
 }
 .card:hover .card__details {
   visibility: visible;
@@ -203,12 +269,14 @@
 
 html {
   background: url(../img/PolygonalBackground.svg) center/cover no-repeat fixed, black;
+  height: 100%;
 }
 
 body {
+  position: relative;
+  min-height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
-  height: 100%;
   font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
@@ -254,14 +322,11 @@ main {
 
 footer {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), black);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
   font-size: 1rem;
   text-align: center;
-  margin-top: auto;
+  margin: auto;
   padding: 1rem;
   width: 100%;
   height: 4rem;
