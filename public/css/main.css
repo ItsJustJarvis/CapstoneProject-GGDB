@@ -6,11 +6,11 @@
 
 .header {
   width: 60vw;
-  margin: 3rem auto;
+  margin: 1.5rem auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  width: 75vw;
+  width: 70vw;
   margin-top: 0;
 }
 .header__content {
@@ -24,7 +24,7 @@
 
 .about {
   width: 60vw;
-  margin: 3rem auto;
+  margin: 1.5rem auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -36,7 +36,7 @@
 
 .search {
   width: 60vw;
-  margin: 3rem auto;
+  margin: 1.5rem auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -103,13 +103,86 @@
   width: 50%;
 }
 
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 3fr;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.carousel__heading {
+  grid-column: 1/-1;
+  justify-self: start;
+}
+.carousel__button {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  color: #fff;
+}
+.carousel__button#prev {
+  visibility: hidden;
+}
+.carousel__button#next {
+  visibility: visible;
+}
+.carousel__button:hover {
+  color: #39ff14;
+  cursor: pointer;
+}
+
+.results {
+  width: 60vw;
+  margin: 1.5rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #000;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  height: 100%;
+}
+.card__content {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.card__details {
+  position: absolute;
+  bottom: 0;
+  list-style-type: none;
+  text-align: left;
+  padding: 0.5rem;
+  visibility: hidden;
+}
+.card:hover .card__content {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+}
+.card:hover .card__details {
+  visibility: visible;
+}
+.card img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
 html {
   background: url(../img/PolygonalBackground.svg) center center/cover no-repeat fixed, black;
 }
 
 body {
   color: #fff;
-  height: 100vh;
+  height: 100%;
   font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
