@@ -1,6 +1,7 @@
-# CapstoneProject-RJarvis-GGDB
+# CapstoneProject-GGDB
+## Author: Reeve Jarvis
 
-## Description:
+### Description:
 
 GGDB - Good Game Database, is a responsive web-app created by Reeve Jarvis for his Capstone Project in the Web and Mobile App Development Program at NIC
 
