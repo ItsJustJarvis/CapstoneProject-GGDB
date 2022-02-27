@@ -2,4 +2,22 @@
 
 .search {
     @include page-section;
+
+    &__bar {
+        @include flex-display(row, no-wrap, center, space-between);
+        width: 100%;
+
+        .entry {
+            height: 2rem;
+            width: 500px;
+            background-color: lightgrey;
+            border-radius: 0.5rem;
+        }
+
+        .submit-button,
+        .filter-button {
+            height: 2rem;
+            padding: 0.25rem;
+        }
+    }
 }
