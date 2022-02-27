@@ -2,7 +2,9 @@
 @use "header";
 @use "about";
 @use "search";
+@use "results";
 @use "responsive";
+
 html {
     background: url(../img/PolygonalBackground.svg) center center/cover no-repeat fixed, black;
 }
