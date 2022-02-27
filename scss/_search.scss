@@ -2,6 +2,7 @@
 
 .search {
     @include page-section;
+    position: relative;
 
     &__bar {
         @include flex-display(row, wrap, center, space-between);
@@ -40,7 +41,10 @@
     }
     &__form {
         display: none;
-        overflow: hidden;
+        width: 100%;
+        position: absolute;
+        bottom: -400px;
+        z-index: 2;
         padding: 1rem;
 
         p {
