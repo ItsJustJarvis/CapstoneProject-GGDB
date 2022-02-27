@@ -6,3 +6,8 @@ Updated:    02/26/2022
 */
 
 "use strict";
+
+import {toggleForm} from "./modules/collapse.js";
+
+let showFilters = document.querySelector(".filter-button");
+showFilters.addEventListener("click", toggleForm);
