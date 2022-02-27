@@ -1,5 +1,6 @@
 @use "config" as *;
 @use "header";
+@use "about";
 html {
     background: url(../img/PolygonalBackground.svg) center center/cover no-repeat fixed, black;
 }
