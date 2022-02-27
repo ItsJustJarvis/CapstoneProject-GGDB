@@ -27,3 +27,11 @@ $menu-grey-dark: #383838;
     align-items: $align;
     justify-content: $justify;
 }
+
+@mixin page-section {
+    width: 60vw;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
