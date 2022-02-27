@@ -11,10 +11,31 @@
             @include flex-display(row, no-wrap, center, space-between);
             width: 75%;
 
-        .submit-button,
-        .filter-button {
-            height: 2rem;
-            padding: 0.25rem;
+            .entry {
+                height: 2rem;
+                width: 80%;
+                background-color: lightgrey;
+                border-radius: 0.5rem;
+            }
+            .submit-button,
+            .filter-button {
+                background-color: black;
+                color: white;
+                border-style: none;
+                border-radius: 0.5rem;
+                width: 3rem;
+                height: 2rem;
+                padding: 0.25rem;
+
+                &:hover {
+                    color: $accent-green;
+                    cursor: pointer;
+                }
+            }
+
+            .filter-button {
+                margin-left: auto;
+            }
         }
     }
     &__form {
