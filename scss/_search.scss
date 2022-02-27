@@ -20,18 +20,10 @@
             }
             .submit-button,
             .filter-button {
-                background-color: black;
-                color: white;
-                border-style: none;
-                border-radius: 0.5rem;
+                @include option-button;
                 width: 3rem;
                 height: 2rem;
                 padding: 0.25rem;
-
-                &:hover {
-                    color: $accent-green;
-                    cursor: pointer;
-                }
             }
 
             .filter-button {
