@@ -40,6 +40,16 @@ $menu-grey-dark: #383838;
     }
 }
 
+@mixin option-button {
+    background-color: black;
+    color: white;
+    border-style: none;
+    border-radius: 0.5rem;
+
+    &:hover {
+        color: $accent-green;
+        cursor: pointer;
+    }
 }
 
 @mixin transition-ease {
