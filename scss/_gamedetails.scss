@@ -44,8 +44,8 @@
         @include flex-display(row, no-wrap, center, initial);
         width: 100%;
 
-        .details,
-        .reviews {
+        .details-button,
+        .reviews-button {
             @include option-button;
             width: 50%;
             height: 3rem;
