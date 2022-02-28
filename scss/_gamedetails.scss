@@ -1,1 +1,39 @@
 @use "config" as *;
+
+.bio {
+    @include page-section;
+
+    &__card {
+        background: $menu-grey-dark;
+        padding: 1rem;
+        border-radius: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 3fr;
+        gap: 2rem;
+        align-items: center;
+
+        &__image {
+            grid-column: 1/2;
+            grid-row: 1/-1;
+            width: 100%;
+            border-radius: 2rem;
+        }
+
+        &__title {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+        &__rating {
+            grid-column: 3/-1;
+            grid-row: 1/2;
+        }
+
+        &__description {
+            grid-column: 2/-1;
+            grid-row: 2/-1;
+        }
+    }
+}
+
