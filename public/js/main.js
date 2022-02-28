@@ -15,6 +15,7 @@ showFilters.addEventListener("click", toggleForm);
 let cancelFilters = document.querySelector(".cancel-filters");
 cancelFilters.addEventListener("click", toggleForm);
 
-let submitSearch = document.querySelector(".submit-button").onclick = function () {
+let submitSearch = document.querySelector(".submit-button");
+submitSearch.addEventListener("click", function () {
     location.href = "results.html";
-};
+});
