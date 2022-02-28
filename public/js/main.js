@@ -10,12 +10,19 @@ Updated:    02/26/2022
 import {toggleForm} from "./modules/collapse.js";
 
 let showFilters = document.querySelector(".filter-button");
-showFilters.addEventListener("click", toggleForm);
+if (showFilters != null){
+    showFilters.addEventListener("click", toggleForm);
+} 
 
 let cancelFilters = document.querySelector(".cancel-filters");
-cancelFilters.addEventListener("click", toggleForm);
+if( cancelFilters != null) {
+    cancelFilters.addEventListener("click", toggleForm);
+}
 
 let submitSearch = document.querySelector(".submit-button");
-submitSearch.addEventListener("click", function () {
-    location.href = "results.html";
-});
+if (submitSearch != null) {
+    submitSearch.addEventListener("click", function () {
+        location.href = "results.html";
+    });
+}
+
