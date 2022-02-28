@@ -266,6 +266,14 @@
   border-radius: 1rem;
 }
 
+.heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: initial;
+}
+
 .bio {
   width: 60vw;
   margin: 1.5rem auto;
