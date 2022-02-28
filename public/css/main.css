@@ -238,11 +238,10 @@
 }
 .card__content {
   width: 100%;
-  padding: 0.5rem;
   border-radius: 1rem;
   transition: all 0.2s ease-in-out;
 }
-.card__details {
+.card__content__details {
   position: absolute;
   bottom: 0;
   list-style-type: none;
@@ -250,16 +249,16 @@
   padding: 0.5rem;
   visibility: hidden;
 }
-.card__details li {
+.card__content__details li {
   padding-top: 0.5rem;
 }
 .card:hover .card__content {
   background-color: white;
   position: absolute;
   bottom: 0;
-  height: 45%;
+  height: 50%;
 }
-.card:hover .card__details {
+.card:hover .card__content__details {
   visibility: visible;
 }
 .card img {
