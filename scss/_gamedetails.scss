@@ -52,3 +52,38 @@
         }
     }
 }
+
+.details {
+    @include page-section;
+
+    &__card {
+        background: $menu-grey-dark;
+        padding: 2rem;
+        border-radius: 2rem;
+
+        &__list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+
+            li {
+                width: 95%;
+                padding: 1rem;
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+
+    &__gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 2rem;
+
+        &__image {
+            width: 100%;
+            border-radius: 2rem;
+        }
+    }
+}
