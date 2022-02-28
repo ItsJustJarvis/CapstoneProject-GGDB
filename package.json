@@ -1,34 +1,34 @@
 {
-  "name": "capstoneproject-rjarvis-ggdb",
-  "version": "1.0.0",
-  "description": "Capstone Project - GGDB Node Express Application",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ItsJustJarvis/CapstoneProject-RJarvis-GGDB.git"
-  },
-  "keywords": [
-    "JavaScript",
-    "API",
-    "Web-App"
-  ],
-  "author": "Reeve Jarvis",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ItsJustJarvis/CapstoneProject-RJarvis-GGDB/issues"
-  },
-  "homepage": "https://github.com/ItsJustJarvis/CapstoneProject-RJarvis-GGDB#readme",
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "nedb": "^1.8.0",
-    "node": "^17.4.0",
-    "node-fetch": "^3.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.10.0"
-  }
+    "name": "capstoneproject-rjarvis-ggdb",
+    "version": "1.0.0",
+    "description": "Capstone Project - GGDB Node Express Application",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ItsJustJarvis/CapstoneProject-RJarvis-GGDB.git"
+    },
+    "keywords": [
+        "JavaScript",
+        "API",
+        "Web-App"
+    ],
+    "author": "Reeve Jarvis",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ItsJustJarvis/CapstoneProject-RJarvis-GGDB/issues"
+    },
+    "homepage": "https://github.com/ItsJustJarvis/CapstoneProject-RJarvis-GGDB#readme",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "nedb": "^1.8.0",
+        "node-fetch": "^2.6.6"
+    },
+    "devDependencies": {
+        "eslint": "^8.10.0"
+    }
 }
