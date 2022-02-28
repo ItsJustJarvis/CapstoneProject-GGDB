@@ -26,3 +26,17 @@ if (submitSearch != null) {
     });
 }
 
+async function getGames() {
+    let games;
+    try {
+        const api_url = "/games/";
+        const response = await fetch(api_url);
+        const json = await response.json();
+        games = json.results;
+        console.log(games);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getGames();
