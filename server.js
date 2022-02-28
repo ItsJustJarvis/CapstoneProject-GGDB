@@ -22,6 +22,8 @@ app.listen(port, () => {
 app.use(express.static("public"));
 app.use(express.json({ limit: "5mb" }));
 
+// Database Requests
+
 const database = new Datastore("game-list.db");
 database.loadDatabase();
 
