@@ -87,3 +87,14 @@
         }
     }
 }
+
+.reviews {
+    @include page-section;
+
+    &__card {
+        background-color: rgba($color: #ffffff, $alpha: 0.3);
+        color: $text-dark;
+        padding: 1rem;
+        border-radius: 2rem;
+    }
+}
