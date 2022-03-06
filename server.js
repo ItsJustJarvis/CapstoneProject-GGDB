@@ -47,12 +47,18 @@ app.post("/api", (request, response) => {
 
 // API Requests
 
-app.get("/games", async (request, response) => {
+app.get("/popular", async (request, response) => {
     const api_key = process.env.API_KEY;
-    const review_endp = `https://api.rawg.io/api/games?key=${api_key}`;
-    const review_response = await fetch(review_endp);
-    const review_data = await review_response.json();
-    response.json(review_data);
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+    const startDate = `${year - 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+    const endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+    const popular_endp = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
+    const popular_response = await fetch(popular_endp);
+    const popular_data = await popular_response.json();
+    response.json(popular_data);
 });
 
 
