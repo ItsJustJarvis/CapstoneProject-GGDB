@@ -61,6 +61,19 @@ app.get("/popular", async (request, response) => {
     response.json(popular_data);
 });
 
+app.get("/newReleases", async (request, response) => {
+    const api_key = process.env.API_KEY;
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+    const startDate = `${year}-${month < 10 ? "0" + (month - 1) : (month - 1)}-${date < 10 ? "0" + date : date}`;
+    const endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+    const popular_endp = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
+    const popular_response = await fetch(popular_endp);
+    const popular_data = await popular_response.json();
+    response.json(popular_data);
+});
 
 // app.get("/search/:entries", async (request, response) => {
 //     const entries = request.params.entries.split(",");
