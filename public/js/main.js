@@ -28,7 +28,23 @@ if (submitSearch != null) {
     });
 }
 
-async function getGames() {
+/* API request functions
+=================================================================================================*/
+
+async function getPopularGames() {
+    let games;
+    try {
+        const api_url = "/popular/";
+        const response = await fetch(api_url);
+        const json = await response.json();
+        games = json.results;
+        console.log("Popular:");
+        console.log(games);
+        displayData("pop", games);
+    } catch (error) {
+        console.error(error);
+    }
+}
     let games;
     try {
         const api_url = "/games/";
