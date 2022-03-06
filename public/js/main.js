@@ -34,7 +34,8 @@ if( cancelFilters != null) {
 let submitSearch = document.querySelector(".submit-button");
 if (submitSearch != null) {
     submitSearch.addEventListener("click", function () {
-        location.href = "results.html";
+        let keyword = getSearchbarInput();
+        getKeywordSearch(keyword);
     });
 }
 
