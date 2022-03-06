@@ -1,3 +1,27 @@
+/*
+Author:     Reeve Jarvis
+Project:    GGDB-Good Game Database
+Filename:   carousel.js
+Updated:    02/26/2022
+*/
+
+"use strict";
+
+export let carouselStart = 0;
+export const carouselEnd = carouselStart + 4;
+
+export function setCarouselBounds(start){
+    carouselStart = start;
+}
+
+export function getCarouselBounds() {
+    let bounds = {start: carouselStart, end: carouselEnd};
+
+    return bounds;
+}
+
+
+
 // Possible Carousel Example to use for later improvements: 
 // https://codepen.io/tuesta/pen/QoMqBY 
 // Pen: Carousel YoutubeMusic 
