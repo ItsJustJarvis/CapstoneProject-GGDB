@@ -114,6 +114,18 @@ async function getKeywordSearch(keyword){
     }
 }
 
+async function getGameDetails(){
+    let id = getGameId();
+    try {
+        const api_url = `/gameDetails/${id}`;
+        const response = await fetch(api_url);
+        const data = await response.json();
+        displayGameDetails(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 async function getCarouselLists() {
     getPopularGames();
     getNewGames();
