@@ -9,6 +9,8 @@ Updated:    02/26/2022
 
 import {toggleForm} from "./modules/collapse.js";
 
+import * as Carousel from "./modules/carousel.js";
+
 let showFilters = document.querySelector(".filter-button");
 if (showFilters != null){
     showFilters.addEventListener("click", toggleForm);
