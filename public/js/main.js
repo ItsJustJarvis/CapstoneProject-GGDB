@@ -38,6 +38,8 @@ if (submitSearch != null) {
     });
 }
 
+let searchResults = document.querySelector(".results__output");
+
 /* API request functions
 =================================================================================================*/
 
