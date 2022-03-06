@@ -130,3 +130,55 @@ function displayData(list, data) {
     }
 }
 
+function generateGameCard(data) {
+
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const pageLink = document.createElement("a");
+    pageLink.setAttribute("href", `game_details.html?${data.id}`);
+
+    const mainImage = document.createElement("img");
+    mainImage.setAttribute("src", data.background_image);
+    mainImage.setAttribute("alt", "box-art");
+
+    const content = document.createElement("div");
+    content.classList.add("card__content");
+
+    const details = document.createElement("ul");
+    details.classList.add("card__content__details");
+
+    const title = document.createElement("p");
+    const titleData = document.createElement("span");
+    titleData.innerText = data.name;
+    title.append(titleData);
+
+    const platform = document.createElement("li");
+    platform.innerText = "Platform: ";
+    const platformData = document.createElement("span");
+    let platformList = [];
+    data.platforms.forEach(element => platformList.push(element.platform.name));
+    platformData.innerText = platformList.join(", ");
+    platform.append(platformData);
+    
+    const genre = document.createElement("li");
+    genre.innerText = "Genre: ";
+    const genreData = document.createElement("span");
+    let genreList = [];
+    data.genres.forEach(element => genreList.push(element.name));
+    genreData.innerText = genreList.join(", ");
+    genre.append(genreData);
+
+    const release = document.createElement("li");
+    release.innerText = "Release: ";
+    const releaseData = document.createElement("span");
+    releaseData.innerText = data.released;
+    release.append(releaseData);
+
+    details.append(platform, genre, release);
+    content.append(title, details);
+    pageLink.append(mainImage, title, content);
+    card.append(pageLink);
+
+    searchResults.append(card);
+}
