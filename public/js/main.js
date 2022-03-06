@@ -103,6 +103,9 @@ function displayData(list, data) {
 
     for(let i=0; i < slice.length; i++){
         const carouselItem = i+1;
+
+        const pageLink = document.querySelector(`.${list}-link-${carouselItem}`);
+        pageLink.setAttribute("href", `game_details.html?id=${data[i].id}`);
         
         const image = document.querySelector(`.${list}-img-${carouselItem}`);
         image.setAttribute("src", data[i].background_image);
