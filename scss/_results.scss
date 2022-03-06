@@ -23,6 +23,11 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 4rem;
+
+        &__placeholder {
+            grid-column: 1/-1;
+            justify-self: center;
+        }
     }
 
     &__footer {
