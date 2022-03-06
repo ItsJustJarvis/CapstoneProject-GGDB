@@ -45,6 +45,22 @@ async function getPopularGames() {
         console.error(error);
     }
 }
+
+async function getNewGames() {
+    let games;
+    try {
+        const api_url = "/newReleases/";
+        const response = await fetch(api_url);
+        const json = await response.json();
+        games = json.results;
+        console.log("New:");
+        console.log(games);
+        displayData("new", games);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
     let games;
     try {
         const api_url = "/games/";
