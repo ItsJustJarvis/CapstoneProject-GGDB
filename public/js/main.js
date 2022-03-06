@@ -90,6 +90,7 @@ async function getAnticipatedGames() {
 }
 
 async function getKeywordSearch(keyword){
+    clearResultsList();
     let games;
     try {
         const api_url = `/keywordSearch/${keyword}`;
@@ -202,6 +203,12 @@ function generateGameCard(data) {
     card.append(pageLink);
 
     searchResults.append(card);
+}
+
+function clearResultsList() {
+    while(searchResults.firstChild){
+        searchResults.removeChild(searchResults.firstChild);    
+    }
 }
 
 /* Search functions
