@@ -12,12 +12,6 @@ import {toggleForm} from "./modules/collapse.js";
 import * as Carousel from "./modules/carousel.js";
 
 
-window.onload = function() {
-    if (window.location.href.indexOf("index.html") > -1) {
-        getCarouselLists();
-    }
-};
-
 /* UI References
 =================================================================================================*/
 
@@ -37,6 +31,16 @@ if (submitSearch != null) {
         let keyword = getSearchbarInput();
         getKeywordSearch(keyword);
     });
+}
+
+let carousels = document.querySelectorAll(".carousel");
+if (carousels.length > 0) {
+    getCarouselLists();
+}
+
+let gameDetails = document.querySelectorAll(".details");
+if(gameDetails.length > 0){
+    getGameDetails();
 }
 
 let searchResults = document.querySelector(".results__output");
