@@ -155,6 +155,54 @@ function displayCardData(list, data) {
     }
 }
 
+function displayGameDetails (data) {
+
+    const image = document.querySelector(".bio__card__image");
+    image.setAttribute("src", data.background_image);
+
+    const title = document.querySelector(".bio__card__content__title");
+    title.innerText = data.name;
+
+    const metacritic = document.querySelector(".metacritic");
+    metacritic.innerText = data.metacritic;
+
+    const description = document.querySelector(".bio__card__content__description");
+    description.innerText = data.description_raw.replace("#", "");
+
+    const platform = document.querySelector(".platform");
+    let platformList = [];
+    data.platforms.forEach(element => platformList.push(element.platform.name));
+    platform.innerText = platformList.join(", ");
+
+    const developer = document.querySelector(".developer");
+    let developerList = [];
+    data.developers.forEach(element => developerList.push(element.name));
+    developer.innerText = developerList.join(", ");
+
+    const players = document.querySelector(".players");
+    players.innerText = "N/A";
+
+    const publisher = document.querySelector(".publisher");
+    let publisherList = [];
+    data.publishers.forEach(element => publisherList.push(element.name));
+    publisher.innerText = publisherList.join(", ");
+
+    const genre = document.querySelector(".genre");
+    let genreList = [];
+    data.genres.forEach(element => genreList.push(element.name));
+    genre.innerText = genreList.join(", ");
+
+    const esrb = document.querySelector(".esrb-rating");
+    esrb.innerText = data.esrb_rating.name;
+
+    const release = document.querySelector(".release-date");
+    release.innerText = data.released;
+
+    const websiteLink = document.querySelector(".website-link");
+    websiteLink.setAttribute("href", data.website);
+    websiteLink.innerText = data.website;
+}
+
 function generateGameCard(data) {
 
     const card = document.createElement("div");
