@@ -89,15 +89,12 @@ app.get("/anticipated", async (request, response) => {
     response.json(anticipated_data);
 });
 
-// app.get("/search/:entries", async (request, response) => {
-//     const entries = request.params.entries.split(",");
-//     let queryParameters = "";
-//     for(const entry in entries){
-//         queryParameters += `${entries[entry]}`;
-//     }
-//     const api_key = process.env.API_KEY;
-//     const review_endp = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?${encodeURI(queryParameters)}api-key=${api_key}`;
-//     const review_response = await fetch(review_endp);
-//     const review_data = await review_response.json();
-//     response.json(review_data);
-// });
+app.get("/keywordSearch/:entries", async (request, response) => {
+    const keyword = request.params.entries;
+    console.log(keyword);
+    const api_key = process.env.API_KEY;
+    const review_endp = `https://api.rawg.io/api/games?key=${api_key}&search=${keyword}`;
+    const review_response = await fetch(review_endp);
+    const review_data = await review_response.json();
+    response.json(review_data);
+});
