@@ -182,3 +182,11 @@ function generateGameCard(data) {
 
     searchResults.append(card);
 }
+
+/* Search functions
+=================================================================================================*/
+
+function getSearchbarInput() {
+    let keyword = document.querySelector(".entry");
+    return keyword.value;
+}
