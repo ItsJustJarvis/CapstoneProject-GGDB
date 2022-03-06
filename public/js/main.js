@@ -57,7 +57,7 @@ async function getPopularGames() {
         games = json.results;
         console.log("Popular:");
         console.log(games);
-        displayData("pop", games);
+        displayCardData("pop", games);
     } catch (error) {
         console.error(error);
     }
@@ -72,7 +72,7 @@ async function getNewGames() {
         games = json.results;
         console.log("New:");
         console.log(games);
-        displayData("new", games);
+        displayCardData("new", games);
     } catch (error) {
         console.error(error);
     }
@@ -87,7 +87,7 @@ async function getAnticipatedGames() {
         games = json.results;
         console.log("Anticipated:");
         console.log(games);
-        displayData("ant", games);
+        displayCardData("ant", games);
     } catch (error) {
         console.error(error);
     }
@@ -124,10 +124,9 @@ async function getCarouselLists() {
 /* Ouput functions
 =================================================================================================*/
 
-function displayData(list, data) {
+function displayCardData(list, data) {
 
     const slice = data.slice(Carousel.carouselStart, Carousel.carouselEnd);
-    console.log(slice);
 
     for(let i=0; i < slice.length; i++){
         const carouselItem = i+1;
