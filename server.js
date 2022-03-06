@@ -27,7 +27,7 @@ app.use(express.json({ limit: "5mb" }));
 const database = new Datastore("game-list.db");
 database.loadDatabase();
 
-app.get("/api", (request, response) => {
+app.get("/database", (request, response) => {
     database.find({}, (err, data) => {
         if (err) {
             response.end();
@@ -37,7 +37,7 @@ app.get("/api", (request, response) => {
     });
 });
 
-app.post("/api", (request, response) => {
+app.post("/database", (request, response) => {
     const data = request.body;
     const timestamp = Date.now();
     data.timestamp = timestamp;
@@ -55,10 +55,10 @@ app.get("/popular", async (request, response) => {
     const date = today.getDate();
     const startDate = `${year - 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
     const endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const popular_endp = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
-    const popular_response = await fetch(popular_endp);
-    const popular_data = await popular_response.json();
-    response.json(popular_data);
+    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
+    const popular_response = await fetch(endpoint);
+    const data = await popular_response.json();
+    response.json(data);
 });
 
 app.get("/newReleases", async (request, response) => {
@@ -69,10 +69,10 @@ app.get("/newReleases", async (request, response) => {
     const date = today.getDate();
     const startDate = `${year}-${month < 10 ? "0" + (month - 1) : (month - 1)}-${date < 10 ? "0" + date : date}`;
     const endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const popular_endp = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
-    const popular_response = await fetch(popular_endp);
-    const popular_data = await popular_response.json();
-    response.json(popular_data);
+    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
+    const newRelease_response = await fetch(endpoint);
+    const data = await newRelease_response.json();
+    response.json(data);
 });
 
 app.get("/anticipated", async (request, response) => {
@@ -83,18 +83,18 @@ app.get("/anticipated", async (request, response) => {
     const date = today.getDate();
     const startDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
     const endDate = `${year + 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const anticipated_endp = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
-    const anticipated_response = await fetch(anticipated_endp);
-    const anticipated_data = await anticipated_response.json();
-    response.json(anticipated_data);
+    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
+    const anticipated_response = await fetch(endpoint);
+    const data = await anticipated_response.json();
+    response.json(data);
 });
 
 app.get("/keywordSearch/:entries", async (request, response) => {
     const keyword = request.params.entries;
-    console.log(keyword);
     const api_key = process.env.API_KEY;
-    const review_endp = `https://api.rawg.io/api/games?key=${api_key}&search=${keyword}`;
-    const review_response = await fetch(review_endp);
-    const review_data = await review_response.json();
-    response.json(review_data);
+    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&search=${keyword}`;
+    const keyword_response = await fetch(endpoint);
+    const data = await keyword_response.json();
+    response.json(data);
+});
 });
