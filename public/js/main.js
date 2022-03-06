@@ -209,7 +209,7 @@ function generateGameCard(data) {
     card.classList.add("card");
 
     const pageLink = document.createElement("a");
-    pageLink.setAttribute("href", `game_details.html?${data.id}`);
+    pageLink.setAttribute("href", `game_details.html?id=${data.id}`);
 
     const mainImage = document.createElement("img");
     mainImage.setAttribute("src", data.background_image);
