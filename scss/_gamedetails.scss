@@ -4,35 +4,38 @@
     @include page-section;
 
     &__card {
-        background: $menu-grey-dark;
-        padding: 1rem;
         border-radius: 2rem;
         display: grid;
-        grid-template-columns: 1fr 2fr 2fr;
-        grid-template-rows: 1fr 3fr;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
+        row-gap: 0;
+        column-gap: 2rem;
         align-items: center;
 
         &__image {
-            grid-column: 1/2;
-            grid-row: 1/-1;
+            border-radius: 2rem 2rem 0 0;
             width: 100%;
-            border-radius: 2rem;
         }
 
-        &__title {
-            grid-column: 2/3;
-            grid-row: 1/2;
-        }
+        &__content {
+            background-color: $menu-grey-dark;
+            padding: 1rem;
+            border-radius: 0 0 2rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: max-content;
+            &__title {
+                grid-column: 1/2;
+            }
 
-        &__rating {
-            grid-column: 3/-1;
-            grid-row: 1/2;
-        }
+            &__rating {
+                grid-column: 2/-1;
+                justify-self: end;
+            }
 
-        &__description {
-            grid-column: 2/-1;
-            grid-row: 2/-1;
+            &__description {
+                grid-column: 1/-1;
+            }
         }
     }
 }
@@ -71,6 +74,10 @@
                 width: 95%;
                 padding: 1rem;
                 border-bottom: 1px solid white;
+
+                a:hover {
+                    color: $accent-blue;
+                }
             }
         }
     }
