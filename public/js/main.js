@@ -269,3 +269,11 @@ function getSearchbarInput() {
     let keyword = document.querySelector(".entry");
     return keyword.value;
 }
+
+function getGameId() {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let value = params.id;
+    return value;
+}
