@@ -97,4 +97,12 @@ app.get("/keywordSearch/:entries", async (request, response) => {
     const data = await keyword_response.json();
     response.json(data);
 });
+
+app.get("/gameDetails/:entries", async (request, response) => {
+    const id = request.params.entries;
+    const api_key = process.env.API_KEY;
+    const endpoint = `https://api.rawg.io/api/games/${id}?key=${api_key}`;
+    const gameDetails_response = await fetch(endpoint);
+    const data = await gameDetails_response.json();
+    response.json(data);
 });
