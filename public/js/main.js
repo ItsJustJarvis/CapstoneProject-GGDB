@@ -11,6 +11,16 @@ import {toggleForm} from "./modules/collapse.js";
 
 import * as Carousel from "./modules/carousel.js";
 
+
+window.onload = function() {
+    if (window.location.href.indexOf("index.html") > -1) {
+        getCarouselLists();
+    }
+};
+
+/* UI References
+=================================================================================================*/
+
 let showFilters = document.querySelector(".filter-button");
 if (showFilters != null){
     showFilters.addEventListener("click", toggleForm);
