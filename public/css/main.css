@@ -211,6 +211,10 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
 }
+.results__output__placeholder {
+  grid-column: 1/-1;
+  justify-self: center;
+}
 .results__footer {
   width: 100%;
   text-align: center;
