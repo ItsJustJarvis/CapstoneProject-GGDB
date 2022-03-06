@@ -88,6 +88,26 @@ async function getAnticipatedGames() {
     }
 }
 
+async function getKeywordSearch(keyword){
+    let games;
+    try {
+        const api_url = `/keywordSearch/${keyword}`;
+        const response = await fetch(api_url);
+        const json = await response.json();
+        games = json.results;
+        if(games !== null){
+            for(let game of games){
+                generateGameCard(game);
+            }
+        } else {
+            searchResults.innerText = "Sorry no results for that search. Please try different values.";
+        }
+    } catch (error) {
+        searchResults.innerText - "Error obtaining data.";
+        console.error(error);
+    }
+}
+
 async function getCarouselLists() {
     getPopularGames();
     getNewGames();
