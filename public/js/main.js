@@ -61,13 +61,16 @@ async function getNewGames() {
     }
 }
 
+async function getAnticipatedGames() {
     let games;
     try {
-        const api_url = "/games/";
+        const api_url = "/anticipated/";
         const response = await fetch(api_url);
         const json = await response.json();
         games = json.results;
+        console.log("Anticipated:");
         console.log(games);
+        displayData("ant", games);
     } catch (error) {
         console.error(error);
     }
