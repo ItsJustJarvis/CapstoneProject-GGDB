@@ -76,7 +76,18 @@ async function getAnticipatedGames() {
     }
 }
 
-getGames();
+async function getCarouselLists() {
+    getPopularGames();
+    getNewGames();
+    getAnticipatedGames();
+}
+
+
+/* Ouput functions
+=================================================================================================*/
+
+function displayData(list, data) {
+
     const slice = data.slice(Carousel.carouselStart, Carousel.carouselEnd);
     console.log(slice);
 
