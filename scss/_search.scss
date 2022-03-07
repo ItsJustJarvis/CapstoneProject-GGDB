@@ -32,8 +32,10 @@
 
             .filter-button {
                 margin-left: auto;
-                opacity: 0.5;
-                filter: grayscale(100%);
+            }
+
+            label {
+                display: none;
             }
         }
     }
