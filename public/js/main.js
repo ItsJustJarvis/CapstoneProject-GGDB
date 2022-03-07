@@ -43,6 +43,7 @@ if(gameDetails != null){
     getGameDetails();
 }
 
+let gallery = document.querySelector(".details__gallery");
 let searchResults = document.querySelector(".results__output");
 
 /* API request functions
