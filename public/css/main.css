@@ -24,6 +24,9 @@
   justify-content: space-between;
   padding: 1rem 0;
 }
+.header__content img {
+  width: 100px;
+}
 .header__content .profile-image {
   opacity: 0.5;
   filter: grayscale(100%);
@@ -424,10 +427,6 @@ a {
 
 p {
   margin: 1rem 0;
-}
-
-img {
-  width: 100px;
 }
 
 header {
