@@ -44,6 +44,12 @@ if(gameDetails != null){
 }
 
 let gallery = document.querySelector(".details__gallery");
+if(gallery != null) {
+    getGameImages();
+}
+
+let reviews = document.querySelector(".reviews__output");
+
 let searchResults = document.querySelector(".results__output");
 
 /* API request functions
