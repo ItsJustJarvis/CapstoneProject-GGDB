@@ -94,6 +94,12 @@ async function getAnticipatedGames() {
     }
 }
 
+async function getCarouselLists() {
+    getPopularGames();
+    getNewGames();
+    getAnticipatedGames();
+}
+
 async function getKeywordSearch(keyword){
     clearResultsList();
     let games;
@@ -127,10 +133,6 @@ async function getGameDetails(){
     }
 }
 
-async function getCarouselLists() {
-    getPopularGames();
-    getNewGames();
-    getAnticipatedGames();
 }
 
 
