@@ -66,12 +66,10 @@ let searchResults = document.querySelector(".results__output");
 =================================================================================================*/
 
 async function getPopularGames() {
-    let games;
     try {
         const api_url = "/popular/";
         const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
+        const games = await response.json();
         displayCardData("pop", games);
     } catch (error) {
         console.error(error);
@@ -79,12 +77,10 @@ async function getPopularGames() {
 }
 
 async function getNewGames() {
-    let games;
     try {
         const api_url = "/newReleases/";
         const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
+        const games = await response.json();
         displayCardData("new", games);
     } catch (error) {
         console.error(error);
@@ -92,12 +88,10 @@ async function getNewGames() {
 }
 
 async function getAnticipatedGames() {
-    let games;
     try {
         const api_url = "/anticipated/";
         const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
+        const games = await response.json();
         displayCardData("ant", games);
     } catch (error) {
         console.error(error);
@@ -112,12 +106,10 @@ async function getCarouselLists() {
 
 async function getKeywordSearch(keyword){
     clearResultsList();
-    let games;
     try {
         const api_url = `/keywordSearch/${keyword}`;
         const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
+        const games = await response.json();
         if(games !== null){
             for(let game of games){
                 generateGameCard(game);
