@@ -94,6 +94,8 @@
 }
 .search__bar__container .filter-button {
   margin-left: auto;
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 .search__form {
   display: none;
@@ -200,6 +202,8 @@
   width: 3rem;
   height: 2rem;
   padding: 0.25rem;
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 .results__views .grid-view:hover,
 .results__views .list-view:hover {
@@ -383,8 +387,9 @@
 }
 .details__gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
   gap: 2rem;
 }
 .details__gallery__image {
@@ -402,11 +407,21 @@
 .reviews:last-of-type {
   margin-bottom: 5rem;
 }
-.reviews__card {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #000;
+.reviews__output {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
+  row-gap: 2rem;
+}
+.reviews__output__card {
+  background-color: #383838;
+  color: #fff;
   padding: 1rem;
   border-radius: 2rem;
+}
+.reviews__output__card a:hover {
+  color: #1b03a3;
 }
 
 html {
