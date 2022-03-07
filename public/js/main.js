@@ -133,6 +133,17 @@ async function getGameDetails(){
     }
 }
 
+async function getGameImages() {
+    let id = getGameId();
+    try {
+        const api_url = `/gameImages/${id}`;
+        const response = await fetch(api_url);
+        const data = await response.json();
+        displayGameGallery(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
 }
 
 
