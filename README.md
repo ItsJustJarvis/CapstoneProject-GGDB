@@ -4,7 +4,7 @@
 
 <br/>
 
-### **DEPLOYED VERSION: https://ggdb-goodgamedatabase.herokuapp.com/
+### INITIAL TEST DEPLOYMENT: https://ggdb-goodgamedatabase.herokuapp.com/
 
 ### **HOW TO RUN/TEST LOCALLY:**
 
