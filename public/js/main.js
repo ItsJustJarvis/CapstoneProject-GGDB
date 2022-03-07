@@ -128,6 +128,7 @@ async function getGameDetails(){
         const response = await fetch(api_url);
         const data = await response.json();
         displayGameDetails(data);
+        getReviews(data.name);
     } catch (error) {
         console.error(error);
     }
@@ -144,6 +145,26 @@ async function getGameImages() {
         console.error(error);
     }
 }
+
+async function getReviews(title) {
+    try {
+        const game_url = `/gameId/${title}`;
+        const game_response = await fetch(game_url);
+        const game_data = await game_response.json();
+        let gameId;
+        game_data.results.forEach(element => {
+            if(element.name == title ){
+                gameId = element.id;
+            }
+        });        
+        // const gameId = game_data.results[0].id;
+        const review_url = `/gameReviews/${gameId}`;
+        const review_response = await fetch(review_url);
+        const review_data = await review_response.json();
+        displayReviews(review_data);        
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 
