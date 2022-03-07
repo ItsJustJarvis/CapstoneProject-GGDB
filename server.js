@@ -22,7 +22,8 @@ app.listen(port, () => {
 app.use(express.static("public"));
 app.use(express.json({ limit: "5mb" }));
 
-// Database Requests
+/* Database Requests
+=================================================================================================*/
 
 const database = new Datastore("game-list.db");
 database.loadDatabase();
@@ -45,7 +46,8 @@ app.post("/database", (request, response) => {
     response.json(data);
 });
 
-// RAWG API Requests
+/* RAWG API Requests
+=================================================================================================*/
 
 app.get("/popular", async (request, response) => {
     const api_key = process.env.RAWG_KEY;
@@ -116,7 +118,8 @@ app.get("/gameImages/:entries", async (request, response) => {
     response.json(data);
 });
 
-// Gamespot API requests
+/* Gamespot API requests
+=================================================================================================*/
 
 app.get("/gameId/:entries", async (request, response) => {
     const title = request.params.entries;

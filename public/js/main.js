@@ -2,7 +2,7 @@
 Author:     Reeve Jarvis
 Project:    GGDB-Good Game Database
 Filename:   main.js
-Updated:    02/26/2022
+Updated:    03/06/2022
 */
 
 "use strict";
@@ -168,7 +168,7 @@ async function getReviews(title) {
 }
 
 
-/* Ouput functions
+/* Display Ouput functions
 =================================================================================================*/
 
 function displayCardData(list, data) {
@@ -251,6 +251,21 @@ function displayGameDetails (data) {
     websiteLink.innerText = data.website;
 }
 
+function displayGameGallery(data) {
+    data.results.forEach(element => generateGalleryImage(element));
+}
+
+function displayReviews(data){
+    if(data.results.length > 0) {
+        data.results.forEach(element => generateReviewCard(element));
+    } else {
+        reviews.innerText = "No review data available for this game.";
+    }    
+}
+
+/* Dynamic Generation functions
+=================================================================================================*/
+
 function generateGameCard(data) {
 
     const card = document.createElement("div");
@@ -304,10 +319,6 @@ function generateGameCard(data) {
     searchResults.append(card);
 }
 
-function displayGameGallery(data) {
-    data.results.forEach(element => generateGalleryImage(element));
-}
-
 function generateGalleryImage(data) {
     let image = document.createElement("img");
     image.classList.add("details__gallery__image");
@@ -317,18 +328,8 @@ function generateGalleryImage(data) {
     gallery.append(image);
 }
 
-function clearResultsList() {
-    while(searchResults.firstChild){
-        searchResults.removeChild(searchResults.firstChild);    
-    }
-}
-
-function displayReviews(data){
-    data.results.forEach(element => generateReviewCard(element));
-}
-
 function generateReviewCard(data) {
-    
+
     let reviewCard = document.createElement("div");
     reviewCard.classList.add("reviews__output__card");
 
@@ -359,6 +360,12 @@ function generateReviewCard(data) {
 function getSearchbarInput() {
     let keyword = document.querySelector(".entry");
     return keyword.value;
+}
+
+function clearResultsList() {
+    while(searchResults.firstChild){
+        searchResults.removeChild(searchResults.firstChild);    
+    }
 }
 
 function getGameId() {

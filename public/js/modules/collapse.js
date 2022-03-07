@@ -1,7 +1,7 @@
 /*
 Author:     Reeve Jarvis
 Project:    GGDB-Good Game Database
-Filename:   collapse.mjs
+Filename:   collapse.js
 Updated:    02/26/2022
 */
 

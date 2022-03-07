@@ -2,7 +2,7 @@
 Author:     Reeve Jarvis
 Project:    GGDB-Good Game Database
 Filename:   carousel.js
-Updated:    02/26/2022
+Updated:    03/05/2022
 */
 
 "use strict";
@@ -19,8 +19,6 @@ export function getCarouselBounds() {
 
     return bounds;
 }
-
-
 
 // Possible Carousel Example to use for later improvements: 
 // https://codepen.io/tuesta/pen/QoMqBY 
