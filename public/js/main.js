@@ -55,8 +55,6 @@ async function getPopularGames() {
         const response = await fetch(api_url);
         const json = await response.json();
         games = json.results;
-        console.log("Popular:");
-        console.log(games);
         displayCardData("pop", games);
     } catch (error) {
         console.error(error);
@@ -70,8 +68,6 @@ async function getNewGames() {
         const response = await fetch(api_url);
         const json = await response.json();
         games = json.results;
-        console.log("New:");
-        console.log(games);
         displayCardData("new", games);
     } catch (error) {
         console.error(error);
@@ -85,8 +81,6 @@ async function getAnticipatedGames() {
         const response = await fetch(api_url);
         const json = await response.json();
         games = json.results;
-        console.log("Anticipated:");
-        console.log(games);
         displayCardData("ant", games);
     } catch (error) {
         console.error(error);
