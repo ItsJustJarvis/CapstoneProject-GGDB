@@ -301,6 +301,36 @@ function clearResultsList() {
     }
 }
 
+function displayReviews(data){
+    data.results.forEach(element => generateReviewCard(element));
+}
+
+function generateReviewCard(data) {
+    
+    let reviewCard = document.createElement("div");
+    reviewCard.classList.add("reviews__output__card");
+
+    let reviewTitle = document.createElement("h3");
+    reviewTitle.innerText = data.title;
+    
+    let reviewLink = document.createElement("a");
+    reviewLink.setAttribute("href", data.site_detail_url);
+    reviewLink.setAttribute("target", "_blank");
+    reviewLink.classList.add("highlight-green");    
+
+    let reviewAuthor = document.createElement("p");
+    reviewAuthor.innerText = `Author: ${data.authors}`;
+
+    let reviewExerpt = document.createElement("p");
+    reviewExerpt.innerText = data.lede;
+
+    reviewLink.append(reviewTitle);
+
+    reviewCard.append(reviewLink, reviewAuthor, reviewExerpt);
+
+    reviews.append(reviewCard);
+}
+
 /* Search functions
 =================================================================================================*/
 
