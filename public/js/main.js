@@ -38,8 +38,8 @@ if (carousels.length > 0) {
     getCarouselLists();
 }
 
-let gameDetails = document.querySelectorAll(".details");
-if(gameDetails.length > 0){
+let gameDetails = document.querySelector(".details");
+if(gameDetails != null){
     getGameDetails();
 }
 
