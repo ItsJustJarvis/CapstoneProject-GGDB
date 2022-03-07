@@ -98,16 +98,21 @@
 .reviews {
     @include page-section;
 
-    &__card {
-        background-color: rgba($color: #ffffff, $alpha: 0.3);
-        color: $text-dark;
-        padding: 1rem;
-        border-radius: 2rem;
     &__output {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: max-content;
         row-gap: 2rem;
 
+        &__card {
+            background-color: $menu-grey-dark;
+            color: $text-light;
+            padding: 1rem;
+            border-radius: 2rem;
+
+            a:hover {
+                color: $accent-blue;
+            }
+        }
     }
 }
