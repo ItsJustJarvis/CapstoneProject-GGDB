@@ -126,4 +126,12 @@ app.get("/gameId/:entries", async (request, response) => {
     const data = await gameId_response.json();
     response.json(data);
 });
+
+app.get("/gameReviews/:entries", async (request, response) => {
+    const id = request.params.entries;
+    const api_key = process.env.GS_KEY;
+    const endpoint = `http://www.gamespot.com/api/reviews/?api_key=${api_key}&format=json&filter=association%3A5000-${id}`;
+    const gameReviews_response = await fetch(endpoint);
+    const data = await gameReviews_response.json();
+    response.json(data);
 });
