@@ -45,10 +45,10 @@ app.post("/database", (request, response) => {
     response.json(data);
 });
 
-// API Requests
+// RAWG API Requests
 
 app.get("/popular", async (request, response) => {
-    const api_key = process.env.API_KEY;
+    const api_key = process.env.RAWG_KEY;
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
@@ -62,7 +62,7 @@ app.get("/popular", async (request, response) => {
 });
 
 app.get("/newReleases", async (request, response) => {
-    const api_key = process.env.API_KEY;
+    const api_key = process.env.RAWG_KEY;
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
@@ -76,7 +76,7 @@ app.get("/newReleases", async (request, response) => {
 });
 
 app.get("/anticipated", async (request, response) => {
-    const api_key = process.env.API_KEY;
+    const api_key = process.env.RAWG_KEY;
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
@@ -91,7 +91,7 @@ app.get("/anticipated", async (request, response) => {
 
 app.get("/keywordSearch/:entries", async (request, response) => {
     const keyword = request.params.entries;
-    const api_key = process.env.API_KEY;
+    const api_key = process.env.RAWG_KEY;
     const endpoint = `https://api.rawg.io/api/games?key=${api_key}&search=${keyword}`;
     const keyword_response = await fetch(endpoint);
     const data = await keyword_response.json();
@@ -100,7 +100,7 @@ app.get("/keywordSearch/:entries", async (request, response) => {
 
 app.get("/gameDetails/:entries", async (request, response) => {
     const id = request.params.entries;
-    const api_key = process.env.API_KEY;
+    const api_key = process.env.RAWG_KEY;
     const endpoint = `https://api.rawg.io/api/games/${id}?key=${api_key}`;
     const gameDetails_response = await fetch(endpoint);
     const data = await gameDetails_response.json();
