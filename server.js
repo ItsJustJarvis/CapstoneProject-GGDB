@@ -115,4 +115,15 @@ app.get("/gameImages/:entries", async (request, response) => {
     const data = await gameDetails_response.json();
     response.json(data);
 });
+
+// Gamespot API requests
+
+app.get("/gameId/:entries", async (request, response) => {
+    const title = request.params.entries;
+    const api_key = process.env.GS_KEY;
+    const endpoint = `http://www.gamespot.com/api/games/?api_key=${api_key}&format=json&filter=name:${title}`;
+    const gameId_response = await fetch(endpoint);
+    const data = await gameId_response.json();
+    response.json(data);
+});
 });
