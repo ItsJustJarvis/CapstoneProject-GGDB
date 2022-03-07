@@ -282,6 +282,19 @@ function generateGameCard(data) {
     searchResults.append(card);
 }
 
+function displayGameGallery(data) {
+    data.results.forEach(element => generateGalleryImage(element));
+}
+
+function generateGalleryImage(data) {
+    let image = document.createElement("img");
+    image.classList.add("details__gallery__image");
+    image.setAttribute("src", data.image);
+    image.setAttribute("alt", "game-screenshot");
+
+    gallery.append(image);
+}
+
 function clearResultsList() {
     while(searchResults.firstChild){
         searchResults.removeChild(searchResults.firstChild);    
