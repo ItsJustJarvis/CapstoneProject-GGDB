@@ -307,6 +307,11 @@ function generateGameCard(data) {
     titleData.innerText = data.name;
     title.append(titleData);
 
+    const title2 = document.createElement("p");
+    const titleData2 = document.createElement("span");
+    titleData2.innerText = data.name;
+    title2.append(titleData2);
+
     const platform = document.createElement("li");
     platform.innerText = "Platform: ";
     const platformData = document.createElement("span");
@@ -331,7 +336,7 @@ function generateGameCard(data) {
 
     details.append(platform, genre, release);
     content.append(title, details);
-    pageLink.append(mainImage, title, content);
+    pageLink.append(mainImage, title2, content);
     card.append(pageLink);
 
     searchResults.append(card);
