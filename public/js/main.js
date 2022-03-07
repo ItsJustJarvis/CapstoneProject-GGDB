@@ -3,6 +3,11 @@ Author:     Reeve Jarvis
 Project:    GGDB-Good Game Database
 Filename:   main.js
 Updated:    03/06/2022
+
+TO RUN THIS APPLICATION ON A LOCAL MACHINE PRIOR TO DEPLOYMENT ENTER THIS TERMINAL COMMAND IN VSCODE TERMINAL:
+
+node server.js
+
 */
 
 "use strict";
