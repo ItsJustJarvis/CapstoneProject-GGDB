@@ -194,6 +194,7 @@ function displayCardData(list, data) {
         
         const image = document.querySelector(`.${list}-img-${carouselItem}`);
         image.setAttribute("src", data[i].background_image);
+        image.setAttribute("alt", `${data[i].name}-Art`);
 
         const titleList = document.querySelectorAll(`.${list}-title-${carouselItem}`);
         titleList.forEach(element => element.innerText = data[i].name);
@@ -293,7 +294,7 @@ function generateGameCard(data) {
 
     const mainImage = document.createElement("img");
     mainImage.setAttribute("src", data.background_image);
-    mainImage.setAttribute("alt", "box-art");
+    mainImage.setAttribute("alt", `${data.name}-art`);
 
     const content = document.createElement("div");
     content.classList.add("card__content");
