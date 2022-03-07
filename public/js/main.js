@@ -25,6 +25,11 @@ if( cancelFilters != null) {
     cancelFilters.addEventListener("click", toggleForm);
 }
 
+let submitFilters = document.querySelector(".submit-filters");
+if(submitFilters != null){
+    submitFilters.addEventListener("click", toggleForm);
+}
+
 let submitSearch = document.querySelector(".submit-button");
 if (submitSearch != null) {
     submitSearch.addEventListener("click", function () {
