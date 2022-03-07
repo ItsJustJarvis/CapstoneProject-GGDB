@@ -9,6 +9,10 @@
         @include flex-display(row, wrap, center, space-between);
         padding: 1rem 0;
 
+        img {
+            width: 100px;
+        }
+
         .profile-image {
             opacity: 0.5;
             filter: grayscale(100%);
