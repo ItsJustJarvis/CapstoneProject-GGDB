@@ -178,6 +178,12 @@ async function getReviews(title) {
 
 function displayCardData(list, data) {
 
+    for (const [key, value] of Object.entries(data)){
+        if (value == null || value == ""){
+            data[`${key}`] = "N/A";
+        }
+    }
+
     const slice = data.slice(Carousel.carouselStart, Carousel.carouselEnd);
 
     for(let i=0; i < slice.length; i++){
@@ -208,6 +214,12 @@ function displayCardData(list, data) {
 }
 
 function displayGameDetails (data) {
+
+    for (const [key, value] of Object.entries(data)){
+        if (value == null || value == ""){
+            data[`${key}`] = "N/A";
+        }
+    }
 
     const image = document.querySelector(".bio__card__image");
     image.setAttribute("src", data.background_image);
