@@ -214,7 +214,7 @@ function displayGameDetails (data) {
     metacritic.innerText = data.metacritic;
 
     const description = document.querySelector(".bio__card__content__description");
-    description.innerText = data.description_raw.replace("#", "");
+    description.innerText = data.description_raw;
 
     const platform = document.querySelector(".platform");
     let platformList = [];
@@ -247,6 +247,7 @@ function displayGameDetails (data) {
 
     const websiteLink = document.querySelector(".website-link");
     websiteLink.setAttribute("href", data.website);
+    websiteLink.setAttribute("target", "_blank");
     websiteLink.innerText = data.website;
 }
 
