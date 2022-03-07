@@ -80,10 +80,6 @@ https://xd.adobe.com/view/1a534ba8-25fd-4917-840f-22a292466d72-4f00/?fullscreen
 
 ## **Project Summary/Explanation**
 
----
-
-<br/>
-
 ### **Description:**
 
 ---
