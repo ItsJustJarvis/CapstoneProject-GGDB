@@ -2,7 +2,7 @@
 Author:     Reeve Jarvis
 Project:    GGDB-Good Game Database
 Filename:   server.js
-Updated:    02/26/2022
+Updated:    03/06/2022
 */
 
 "use strict";
@@ -13,7 +13,6 @@ const fetch = require("node-fetch");
 const app = express();
 require("dotenv").config();
 
-// eslint-disable-next-line no-undef
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
