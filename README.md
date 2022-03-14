@@ -12,7 +12,9 @@
 
 ---
 
-Prior to deployment online, this application requires a local node server to run and populate data. Download and Install Node here: https://nodejs.org/en/
+Prior to deployment online, this application requires a local node server to run and populate data. 
+
+Download and Install Node here: https://nodejs.org/en/
 
 Steps to run application:
 
