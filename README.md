@@ -6,20 +6,8 @@
 
 ### INITIAL TEST DEPLOYMENT: https://ggdb-goodgamedatabase.herokuapp.com/
 
-### **HOW TO RUN/TEST LOCALLY:**
+*To run and test this code on a local machine, please switch to the local-test branch and follow the readme instructions.*
 
----
-
-Prior to deployment online, this application requires a local node server to run and populate data.
-
-Steps to run application:
-
-1. Open the repository in VSCode
-2. Open a new terminal within repository
-3. Run terminal command: node server.js (if successful - terminal will log "Server running on 3000")
-4. Enter localhost:3000 into browser to view and run application
-
-<br/>
 
 ### **Current Version:** MVP - Minimum Viable Product
 
