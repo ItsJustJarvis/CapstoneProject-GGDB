@@ -8,17 +8,12 @@
 
 <br/>
 
-### **Dependancies:**
-
-In order to run in a local test environment, you must have node installed.
-
-Download here: https://nodejs.org/en/
 
 ### **How to run/test locally:**
 
 ---
 
-Prior to deployment online, this application requires a local node server to run and populate data.
+Prior to deployment online, this application requires a local node server to run and populate data. Download node here: https://nodejs.org/en/
 
 Steps to run application:
 
