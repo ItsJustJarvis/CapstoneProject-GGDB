@@ -6,7 +6,15 @@
 
 ### INITIAL TEST DEPLOYMENT: https://ggdb-goodgamedatabase.herokuapp.com/
 
-### **HOW TO RUN/TEST LOCALLY:**
+<br/>
+
+### **Dependancies:**
+
+In order to run in a local test environment, you must have node installed.
+
+Download here: https://nodejs.org/en/
+
+### **How to run/test locally:**
 
 ---
 
