@@ -6,20 +6,8 @@
 
 ### INITIAL TEST DEPLOYMENT: https://ggdb-goodgamedatabase.herokuapp.com/
 
-### **HOW TO RUN/TEST LOCALLY:**
+*To run and test this code on a local machine, please switch to the local-test branch and follow the readme instructions.*
 
----
-
-Prior to deployment online, this application requires a local node server to run and populate data.
-
-Steps to run application:
-
-1. Open the repository in VSCode
-2. Open a new terminal within repository
-3. Run terminal command: node server.js (if successful - terminal will log "Server running on 3000")
-4. Enter localhost:3000 into browser to view and run application
-
-<br/>
 
 ### **Current Version:** MVP - Minimum Viable Product
 
@@ -40,17 +28,11 @@ https://xd.adobe.com/view/1a534ba8-25fd-4917-840f-22a292466d72-4f00/?fullscreen
 
 <br/>
 
-> **Responsive design**
+> **Responsive design** - Current version only properly displayed on Desktop. I have used grid/flex displays so it should only require a few style-rule changes to prepare mobile/tablet displays. This will be a main priority for the Complete Product.
 
--   Current version only properly displayed on Desktop. I have used grid/flex displays so it should only require a few style-rule changes to prepare mobile/tablet displays. This will be a main priority for the Complete Product.
+> **Aesthetic Fixes** - More styling required including: adding more brand-colours, standardizing image sizes, improving visual separation
 
-> **Aesthetic Fixes**
-
--   More styling required including: adding more brand-colours, standardizing image sizes, improving visual separation
-
-> **Code Reduction/Refactoring**
-
--   Code is in need of general reduction and refactoring to meet my expecations for modularity and "clean" code. There may be some redundant code present. Additionally, I will be re-organizing my JavaScript code into modules to create a better separation of concerns.
+> **Code Reduction/Refactoring** - Code is in need of general reduction and refactoring to meet my expecations for modularity and "clean" code. There may be some redundant code present. Additionally, I will be re-organizing my JavaScript code into modules to create a better separation of concerns.
 
 <br/>
 
@@ -58,25 +40,15 @@ https://xd.adobe.com/view/1a534ba8-25fd-4917-840f-22a292466d72-4f00/?fullscreen
 
 <br/>
 
-> **In-depth search filtering**
+> **In-depth search filtering** - I have created the UI required, but removed it until functional for complete product
 
--   I have created the UI required, but removed it until functional for complete product
+> **Search-result view changes (Grid vs. List)** - I have removed these UI elements until I complete the programming required to change presentation properly
 
-> **Search-result view changes (Grid vs. List)**
+> **Carousel-scrolling for curated game lists** - I need to create the required code/programming to change and animate the carousel lists (Currently presenting top 4 for each category)
 
--   I have removed these UI elements until I complete the programming required to change presentation properly
+> **Database implementation** - I plan to add more database usage to reduce API reliance and add more features to complete product
 
-> **Carousel-scrolling for curated game lists**
-
--   I need to create the required code/programming to change and animate the carousel lists (Currently presenting top 4 for each category)
-
-> **Database implementation**
-
--   I plan to add more database usage to reduce API reliance and add more features to complete product
-
-> **User Profile Management**
-
--   If time allows, I will be exploring User-Profile implementation and adding game-list management and game suggestions based on interests
+> **User Profile Management** - If time allows, I will be exploring User-Profile implementation and adding game-list management and game suggestions based on interests
 
 <br/>
 
