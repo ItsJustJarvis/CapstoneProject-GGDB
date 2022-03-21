@@ -22,3 +22,32 @@ async function getCarouselData(gameList) {
     }
 }
 
+function getRequestDates(gameList){
+    let requestDates = `${gameList.startDate},${gameList.endDate}`;
+    return requestDates;
+}
+
+function setRequestDates(gameList) {
+    
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+
+    if (gameList.name == "popular"){
+        gameList.startDate = `${year - 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+        gameList.endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+    }
+
+    if (gameList.name == "new"){
+        gameList.startDate = `${year}-${month < 10 ? "0" + (month - 1) : (month - 1)}-${date < 10 ? "0" + date : date}`;
+        gameList.endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+    }
+
+    if (gameList.name == "anticipated"){
+        gameList.startDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+        gameList.endDate = `${year + 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
+    }
+}
+
+export {getCarouselData,setRequestDates};
