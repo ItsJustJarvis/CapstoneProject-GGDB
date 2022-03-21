@@ -16,51 +16,41 @@ import {toggleForm} from "./modules/collapse.js";
 
 import * as Carousel from "./modules/carousel.js";
 
+import * as View from "./modules/view.js";
 
 /* UI References
 =================================================================================================*/
 
-let showFilters = document.querySelector(".filter-button");
-if (showFilters != null){
-    showFilters.addEventListener("click", toggleForm);
+if (View.showFilters != null){
+    View.showFilters.addEventListener("click", toggleForm);
 } 
 
-let cancelFilters = document.querySelector(".cancel-filters");
-if( cancelFilters != null) {
-    cancelFilters.addEventListener("click", toggleForm);
+if( View.cancelFilters != null) {
+    View.cancelFilters.addEventListener("click", toggleForm);
 }
 
-let submitFilters = document.querySelector(".submit-filters");
-if(submitFilters != null){
-    submitFilters.addEventListener("click", toggleForm);
+if(View.submitFilters != null){
+    View.submitFilters.addEventListener("click", toggleForm);
 }
 
-let submitSearch = document.querySelector(".submit-button");
-if (submitSearch != null) {
-    submitSearch.addEventListener("click", function () {
+if (View.submitSearch != null) {
+    View.submitSearch.addEventListener("click", function () {
         let keyword = getSearchbarInput();
         getKeywordSearch(keyword);
     });
 }
 
-let carousels = document.querySelectorAll(".carousel");
-if (carousels.length > 0) {
+if (View.carousels.length > 0) {
     getCarouselLists();
 }
 
-let gameDetails = document.querySelector(".details");
-if(gameDetails != null){
+if(View.gameDetails != null){
     getGameDetails();
 }
 
-let gallery = document.querySelector(".details__gallery");
-if(gallery != null) {
+if(View.gallery != null) {
     getGameImages();
 }
-
-let reviews = document.querySelector(".reviews__output");
-
-let searchResults = document.querySelector(".results__output");
 
 /* API request functions
 =================================================================================================*/
@@ -123,10 +113,10 @@ async function getKeywordSearch(keyword){
                 generateGameCard(game);
             }
         } else {
-            searchResults.innerText = "Sorry no results for that search. Please try different values.";
+            View.searchResults.innerText = "Sorry no results for that search. Please try different values.";
         }
     } catch (error) {
-        searchResults.innerText - "Error obtaining data.";
+        View.searchResults.innerText - "Error obtaining data.";
         console.error(error);
     }
 }
@@ -282,7 +272,7 @@ function displayReviews(data){
     if(data.results.length > 0) {
         data.results.forEach(element => generateReviewCard(element));
     } else {
-        reviews.innerText = "No review data available for this game.";
+        View.reviews.innerText = "No review data available for this game.";
     }    
 }
 
@@ -344,7 +334,7 @@ function generateGameCard(data) {
     pageLink.append(mainImage, title2, content);
     card.append(pageLink);
 
-    searchResults.append(card);
+    View.searchResults.append(card);
 }
 
 function generateGalleryImage(data) {
@@ -353,7 +343,7 @@ function generateGalleryImage(data) {
     image.setAttribute("src", data.image);
     image.setAttribute("alt", "game-screenshot");
 
-    gallery.append(image);
+    View.gallery.append(image);
 }
 
 function generateReviewCard(data) {
@@ -379,7 +369,7 @@ function generateReviewCard(data) {
 
     reviewCard.append(reviewLink, reviewAuthor, reviewExerpt);
 
-    reviews.append(reviewCard);
+    View.reviews.append(reviewCard);
 }
 
 /* Search functions
@@ -391,8 +381,8 @@ function getSearchbarInput() {
 }
 
 function clearResultsList() {
-    while(searchResults.firstChild){
-        searchResults.removeChild(searchResults.firstChild);    
+    while(View.searchResults.firstChild){
+        View.searchResults.removeChild(View.searchResults.firstChild);    
     }
 }
 
