@@ -53,45 +53,12 @@ app.post("/database", (request, response) => {
 /* RAWG API Requests
 =================================================================================================*/
 
-app.get("/popular", async (request, response) => {
+app.get("/carousel/:entries", async (request, response) => {
+    const requestedDates = request.params.entries.split(",");
     const api_key = process.env.RAWG_KEY;
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const date = today.getDate();
-    const startDate = `${year - 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
+    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${requestedDates[0]},${requestedDates[1]}&ordering=-added`;
     const popular_response = await fetch(endpoint);
     const data = await popular_response.json();
-    response.json(data);
-});
-
-app.get("/newReleases", async (request, response) => {
-    const api_key = process.env.RAWG_KEY;
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const date = today.getDate();
-    const startDate = `${year}-${month < 10 ? "0" + (month - 1) : (month - 1)}-${date < 10 ? "0" + date : date}`;
-    const endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
-    const newRelease_response = await fetch(endpoint);
-    const data = await newRelease_response.json();
-    response.json(data);
-});
-
-app.get("/anticipated", async (request, response) => {
-    const api_key = process.env.RAWG_KEY;
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const date = today.getDate();
-    const startDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const endDate = `${year + 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
-    const endpoint = `https://api.rawg.io/api/games?key=${api_key}&dates=${startDate},${endDate}&ordering=-added`;
-    const anticipated_response = await fetch(endpoint);
-    const data = await anticipated_response.json();
     response.json(data);
 });
 
