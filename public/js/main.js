@@ -168,27 +168,27 @@ function displayCardData(list, data) {
     for(let i=0; i < slice.length; i++){
         const carouselItem = i+1;
 
-        const pageLink = document.querySelector(`.${list}-link-${carouselItem}`);
+        const pageLink = document.querySelector(`.${list.name}-link-${carouselItem}`);
         pageLink.setAttribute("href", `game_details.html?id=${data[i].id}`);
         
-        const image = document.querySelector(`.${list}-img-${carouselItem}`);
+        const image = document.querySelector(`.${list.name}-img-${carouselItem}`);
         image.setAttribute("src", data[i].background_image);
         image.setAttribute("alt", `${data[i].name}-Art`);
 
-        const titleList = document.querySelectorAll(`.${list}-title-${carouselItem}`);
+        const titleList = document.querySelectorAll(`.${list.name}-title-${carouselItem}`);
         titleList.forEach(element => element.innerText = data[i].name);
 
-        const platform = document.querySelector(`.${list}-platform-${carouselItem}`);
+        const platform = document.querySelector(`.${list.name}-platform-${carouselItem}`);
         let platformList = [];
         data[i].platforms.forEach(element => platformList.push(element.platform.name));
         platform.innerText = platformList.join(", ");
 
-        const genre = document.querySelector(`.${list}-genre-${carouselItem}`);
+        const genre = document.querySelector(`.${list.name}-genre-${carouselItem}`);
         let genreList = [];
         data[i].genres.forEach(element => genreList.push(element.name));
         genre.innerText = genreList.join(", ");
 
-        const release = document.querySelector(`.${list}-release-${carouselItem}`);
+        const release = document.querySelector(`.${list.name}-release-${carouselItem}`);
         release.innerText = data[i].released;
     }
 }
