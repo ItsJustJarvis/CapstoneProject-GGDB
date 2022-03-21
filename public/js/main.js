@@ -18,7 +18,9 @@ import * as Carousel from "./modules/carousel.js";
 
 import * as View from "./modules/view.js";
 
-/* UI References
+import * as Request from "./modules/request.js";
+
+/* View conditional checks and event listeners
 =================================================================================================*/
 
 if (View.showFilters != null){
@@ -56,42 +58,24 @@ if(View.gallery != null) {
 =================================================================================================*/
 
 async function getPopularGames() {
-    let games;
-    try {
-        const api_url = "/popular/";
-        const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
-        displayCardData("pop", games);
-    } catch (error) {
-        console.error(error);
-    }
+    const list = {name: "popular"};
+    Request.setRequestDates(list);
+    let games = await Request.getCarouselData(list);
+    displayCardData(list, games);
 }
 
 async function getNewGames() {
-    let games;
-    try {
-        const api_url = "/newReleases/";
-        const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
-        displayCardData("new", games);
-    } catch (error) {
-        console.error(error);
-    }
+    const list = {name: "new"};
+    Request.setRequestDates(list);
+    let games = await Request.getCarouselData(list);
+    displayCardData(list, games);
 }
 
 async function getAnticipatedGames() {
-    let games;
-    try {
-        const api_url = "/anticipated/";
-        const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
-        displayCardData("ant", games);
-    } catch (error) {
-        console.error(error);
-    }
+    const list = {name: "anticipated"};
+    Request.setRequestDates(list);
+    let games = await Request.getCarouselData(list);
+    displayCardData(list, games);
 }
 
 async function getCarouselLists() {
