@@ -8,6 +8,9 @@ Updated:    03/21/2022
 "use strict";
 
 
+/* API request functions
+=================================================================================================*/
+
 async function carouselData(gameList) {
     let games;
     const requestDates = getDates(gameList);
@@ -71,6 +74,12 @@ async function gameReviewsData(title) {
         console.error(error);
     }
 }
+
+
+
+/* Request Date Getter and Setter
+=================================================================================================*/
+
 function getDates(gameList){
     let requestDates = `${gameList.startDate},${gameList.endDate}`;
     return requestDates;
@@ -98,5 +107,8 @@ function setDates(gameList) {
         gameList.endDate = `${year + 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
     }
 }
+
+/* Module Exports
+=================================================================================================*/
 
 export {carouselData, setDates, keywordSearchData, gameDetailsData, gameReviewsData};
