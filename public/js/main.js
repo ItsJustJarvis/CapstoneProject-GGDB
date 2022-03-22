@@ -37,24 +37,20 @@ if(View.submitFilters != null){
 
 if (View.submitSearch != null) {
     View.submitSearch.addEventListener("click", function () {
-        let keyword = getSearchbarInput();
-        getKeywordSearch(keyword);
+        let keyword = Search.getSearchbarInput();
+        populateKeywordSearchResults(keyword);
     });
 }
 
 if (View.carousels.length > 0) {
-    getCarouselLists();
+    populateCarousels();
 }
 
 if(View.gameDetails != null){
-    getGameDetails();
+    populateGamePageContent();
 }
 
-if(View.gallery != null) {
-    getGameImages();
-}
-
-/* API request functions
+/* API Data Handlers
 =================================================================================================*/
 
 async function getCarouselGames(list) {
