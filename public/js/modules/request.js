@@ -34,6 +34,43 @@ async function keywordSearchData(keyword){
         console.error(error);
     }
 }
+
+async function gameDetailsData(id){
+    try {
+        const details_url = `/gameDetails/${id}`;
+        const response = await fetch(details_url);
+        const data = await response.json();
+        const images_url = `/gameImages/${id}`;
+        const images_response = await fetch(images_url);
+        const images_data = await images_response.json();
+        data.screenshots = images_data;
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function gameReviewsData(title) {
+    let gameId = 0;
+    try {
+        const game_url = `/gameId/${title}`;
+        const game_response = await fetch(game_url);
+        const game_data = await game_response.json();
+        game_data.results.forEach(element => {
+            if(element.name == title ){
+                gameId = element.id;
+            } 
+        });
+        if (gameId != 0){
+            const review_url = `/gameReviews/${gameId}`;
+            const review_response = await fetch(review_url);
+            const review_data = await review_response.json();
+            return review_data;  
+        }       
+    } catch (error) {
+        console.error(error);
+    }
+}
     let requestDates = `${gameList.startDate},${gameList.endDate}`;
     return requestDates;
 }
