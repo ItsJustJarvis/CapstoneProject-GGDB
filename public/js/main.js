@@ -78,41 +78,17 @@ async function populateKeywordSearchResults(keyword){
     }
 }
 
-async function getGameImages() {
+async function populateGamePageContent(){
     let id = getGameId();
-    try {
-        const api_url = `/gameImages/${id}`;
-        const response = await fetch(api_url);
-        const data = await response.json();
-        displayGameGallery(data);
-    } catch (error) {
-        console.error(error);
-    }
+    const gameDetails = await Request.gameDetailsData(id);
+    replaceEmptyPropertyValues(gameDetails);
+    View.displayGameDetails(gameDetails);
+    View.displayGameGallery(gameDetails.screenshots);
+    const reviews = await Request.gameReviewsData(gameDetails.name);
+    View.displayReviews(reviews);
 }
 
-async function getReviews(title) {
-    try {
-        const game_url = `/gameId/${title}`;
-        const game_response = await fetch(game_url);
-        const game_data = await game_response.json();
-        let gameId;
-        game_data.results.forEach(element => {
-            if(element.name == title ){
-                gameId = element.id;
-            }
-        });        
-        // const gameId = game_data.results[0].id;
-        const review_url = `/gameReviews/${gameId}`;
-        const review_response = await fetch(review_url);
-        const review_data = await review_response.json();
-        displayReviews(review_data);        
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-
-/* Display Ouput functions
+/* Utility functions
 =================================================================================================*/
 
 function displayCardData(list, data) {
