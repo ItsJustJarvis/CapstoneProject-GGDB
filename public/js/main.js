@@ -110,3 +110,11 @@ function getGameId() {
     let value = params.id;
     return value;
 }
+
+function replaceEmptyPropertyValues(data) {
+    for (const [key, value] of Object.entries(data)){
+        if (value == null || value == ""){
+            data[`${key}`] = "N/A";
+        }
+    }
+}
