@@ -22,7 +22,18 @@ async function getCarouselData(gameList) {
     }
 }
 
-function getRequestDates(gameList){
+async function keywordSearchData(keyword){
+    let games;
+    try {
+        const api_url = `/keywordSearch/${keyword}`;
+        const response = await fetch(api_url);
+        const json = await response.json();
+        games = json.results;
+        return games;
+    } catch (error) {
+        console.error(error);
+    }
+}
     let requestDates = `${gameList.startDate},${gameList.endDate}`;
     return requestDates;
 }

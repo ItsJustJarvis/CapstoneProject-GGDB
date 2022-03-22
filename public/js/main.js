@@ -66,38 +66,15 @@ async function populateCarousels() {
     getCarouselGames({name: "anticipated"});
 }
 
-
-async function getKeywordSearch(keyword){
+async function populateKeywordSearchResults(keyword){
     clearResultsList();
-    let games;
-    try {
-        const api_url = `/keywordSearch/${keyword}`;
-        const response = await fetch(api_url);
-        const json = await response.json();
-        games = json.results;
-        if(games !== null){
-            for(let game of games){
-                generateGameCard(game);
-            }
-        } else {
-            View.searchResults.innerText = "Sorry no results for that search. Please try different values.";
+    const games = await Request.keywordSearchData(keyword);
+    if(games !== null){
+        for(let game of games){
+            View.generateGameCard(game);
         }
-    } catch (error) {
-        View.searchResults.innerText - "Error obtaining data.";
-        console.error(error);
-    }
-}
-
-async function getGameDetails(){
-    let id = getGameId();
-    try {
-        const api_url = `/gameDetails/${id}`;
-        const response = await fetch(api_url);
-        const data = await response.json();
-        displayGameDetails(data);
-        getReviews(data.name);
-    } catch (error) {
-        console.error(error);
+    } else {
+        View.searchResults.innerText = "Sorry no results for that search. Please try a different game title.";
     }
 }
 
