@@ -57,32 +57,19 @@ if(View.gallery != null) {
 /* API request functions
 =================================================================================================*/
 
-async function getPopularGames() {
-    const list = {name: "popular"};
-    Request.setRequestDates(list);
-    let games = await Request.getCarouselData(list);
-    displayCardData(list, games);
+async function getCarouselGames(list) {
+    Request.setDates(list);
+    const games = await Request.carouselData(list);
+    replaceEmptyPropertyValues(games);
+    View.displayCarouselCard(list, games);
 }
 
-async function getNewGames() {
-    const list = {name: "new"};
-    Request.setRequestDates(list);
-    let games = await Request.getCarouselData(list);
-    displayCardData(list, games);
+async function populateCarousels() {
+    getCarouselGames({name: "popular"});
+    getCarouselGames({name: "new"});
+    getCarouselGames({name: "anticipated"});
 }
 
-async function getAnticipatedGames() {
-    const list = {name: "anticipated"};
-    Request.setRequestDates(list);
-    let games = await Request.getCarouselData(list);
-    displayCardData(list, games);
-}
-
-async function getCarouselLists() {
-    getPopularGames();
-    getNewGames();
-    getAnticipatedGames();
-}
 
 async function getKeywordSearch(keyword){
     clearResultsList();
