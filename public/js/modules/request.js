@@ -8,9 +8,9 @@ Updated:    03/21/2022
 "use strict";
 
 
-async function getCarouselData(gameList) {
+async function carouselData(gameList) {
     let games;
-    const requestDates = getRequestDates(gameList);
+    const requestDates = getDates(gameList);
     try {
         const api_url = `/carousel/${requestDates}`;
         const response = await fetch(api_url);
@@ -71,11 +71,12 @@ async function gameReviewsData(title) {
         console.error(error);
     }
 }
+function getDates(gameList){
     let requestDates = `${gameList.startDate},${gameList.endDate}`;
     return requestDates;
 }
 
-function setRequestDates(gameList) {
+function setDates(gameList) {
     
     const today = new Date();
     const year = today.getFullYear();
@@ -98,4 +99,4 @@ function setRequestDates(gameList) {
     }
 }
 
-export {getCarouselData,setRequestDates};
+export {carouselData, setDates, keywordSearchData, gameDetailsData, gameReviewsData};
