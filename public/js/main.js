@@ -91,6 +91,9 @@ async function populateGamePageContent(){
 /* Utility functions
 =================================================================================================*/
 
+function clearResultsList() {
+    while(View.searchResults.firstChild){
+        View.searchResults.removeChild(View.searchResults.firstChild);    
     }
 }
 
