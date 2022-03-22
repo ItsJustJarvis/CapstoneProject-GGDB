@@ -12,10 +12,6 @@ node server.js
 
 "use strict";
 
-import {toggleForm} from "./modules/collapse.js";
-
-import * as Carousel from "./modules/carousel.js";
-
 import * as View from "./modules/view.js";
 
 import * as Request from "./modules/request.js";
