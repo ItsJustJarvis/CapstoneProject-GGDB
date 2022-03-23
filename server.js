@@ -13,7 +13,6 @@ node server.js
 "use strict";
 
 const express = require("express");
-const Datastore = require("nedb");
 const fetch = require("node-fetch");
 const app = express();
 require("dotenv").config();
@@ -25,30 +24,6 @@ app.listen(port, () => {
 });
 app.use(express.static("public"));
 app.use(express.json({ limit: "5mb" }));
-
-/* Database Requests
-=================================================================================================*/
-
-const database = new Datastore("game-list.db");
-database.loadDatabase();
-
-app.get("/database", (request, response) => {
-    database.find({}, (err, data) => {
-        if (err) {
-            response.end();
-            return;
-        }
-        response.json(data);
-    });
-});
-
-app.post("/database", (request, response) => {
-    const data = request.body;
-    const timestamp = Date.now();
-    data.timestamp = timestamp;
-    database.insert(data);
-    response.json(data);
-});
 
 /* RAWG API Requests
 =================================================================================================*/
