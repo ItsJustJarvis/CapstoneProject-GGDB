@@ -4,6 +4,7 @@
     @include page-section;
 
     &__card {
+        width: 100%;
         border-radius: 2rem;
         display: grid;
         grid-template-columns: 1fr;
@@ -11,6 +12,7 @@
         row-gap: 0;
         column-gap: 2rem;
         align-items: center;
+        justify-items: center;
 
         &__image {
             border-radius: 2rem 2rem 0 0;
@@ -19,11 +21,13 @@
 
         &__content {
             background-color: $menu-grey-dark;
-            padding: 1rem;
+            width: 100%;
+            padding: 2rem;
             border-radius: 0 0 2rem 2rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: max-content;
+
             &__title {
                 grid-column: 1/2;
             }
@@ -45,7 +49,7 @@
 
     &__card {
         background: $menu-grey-dark;
-        padding: 2rem;
+        padding: 1rem;
         border-radius: 2rem;
 
         &__list {
