@@ -413,7 +413,6 @@
   }
 
   .carousel {
-    width: 80%;
     grid-template-columns: 1fr;
   }
 
@@ -519,7 +518,7 @@ main {
   flex-direction: column;
   flex-wrap: no-wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: initial;
 }
 
 footer {
