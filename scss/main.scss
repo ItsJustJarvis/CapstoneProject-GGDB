@@ -55,7 +55,7 @@ header {
 main {
     height: 100%;
     width: 100%;
-    @include flex-display(column, no-wrap, center, initial);
+    @include flex-display(column, no-wrap, center, center);
 }
 
 footer {
