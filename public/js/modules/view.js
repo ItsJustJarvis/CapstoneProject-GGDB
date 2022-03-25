@@ -241,20 +241,22 @@ function noResultsMessage() {
 =================================================================================================*/
 
 export {
+    searchForm,
     showFilters,
     cancelFilters,
     submitFilters,
     submitSearch,
     carousels,
     gameDetails,
-    gallery,
-    reviews,
-    searchResults, 
     generateGameCard, 
     generateGalleryImage, 
     generateReviewCard,
     displayCarouselCard,
     displayGameDetails,
     displayGameGallery,
-    displayReviews    
+    displayReviews,
+    toggleVisibility,
+    getSearchbarInput,
+    clearResultsList, 
+    noResultsMessage   
 };
