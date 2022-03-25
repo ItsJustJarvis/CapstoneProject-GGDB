@@ -39,45 +39,47 @@ function generateGameCard(data) {
 
     const content = document.createElement("div");
     content.classList.add("card__content");
-
-    const details = document.createElement("ul");
-    details.classList.add("card__content__details");
-
+    
     const title = document.createElement("p");
+    title.classList.add("card__content__title");
     const titleData = document.createElement("span");
     titleData.innerText = data.name;
     title.append(titleData);
 
-    const title2 = document.createElement("p");
-    const titleData2 = document.createElement("span");
-    titleData2.innerText = data.name;
-    title2.append(titleData2);
-
+    const details = document.createElement("ul");
+    details.classList.add("card__content__details");
+    
     const platform = document.createElement("li");
-    platform.innerText = "Platform: ";
+    const platformSpan = document.createElement("span");
+    platformSpan.classList.add("highlight-green");
+    platformSpan.innerText = "Platform: ";
     const platformData = document.createElement("span");
     let platformList = [];
     data.platforms.forEach(element => platformList.push(element.platform.name));
     platformData.innerText = platformList.join(", ");
-    platform.append(platformData);
+    platform.append(platformSpan, platformData);
     
     const genre = document.createElement("li");
-    genre.innerText = "Genre: ";
+    const genreSpan = document.createElement("span");
+    genreSpan.classList.add("highlight-green");
+    genreSpan.innerText = "Genre: ";
     const genreData = document.createElement("span");
     let genreList = [];
     data.genres.forEach(element => genreList.push(element.name));
     genreData.innerText = genreList.join(", ");
-    genre.append(genreData);
+    genre.append(genreSpan, genreData);
 
     const release = document.createElement("li");
-    release.innerText = "Release: ";
+    const releaseSpan = document.createElement("span");
+    releaseSpan.classList.add("highlight-green");
+    releaseSpan.innerText = "Release: ";
     const releaseData = document.createElement("span");
     releaseData.innerText = data.released;
-    release.append(releaseData);
+    release.append(releaseSpan,releaseData);
 
     details.append(platform, genre, release);
     content.append(title, details);
-    pageLink.append(mainImage, title2, content);
+    pageLink.append(mainImage, content);
     card.append(pageLink);
 
     searchResults.append(card);
@@ -128,27 +130,27 @@ function displayCarouselCard(list, data) {
     for(let i=0; i < slice.length; i++){
         const carouselItem = i+1;
 
-        const pageLink = document.querySelector(`.${list.name}-link-${carouselItem}`);
+        const pageLink = document.querySelector(`#${list.name}-link-${carouselItem}`);
         pageLink.setAttribute("href", `game_details.html?id=${data[i].id}`);
         
-        const image = document.querySelector(`.${list.name}-img-${carouselItem}`);
+        const image = document.querySelector(`#${list.name}-img-${carouselItem}`);
         image.setAttribute("src", data[i].background_image);
         image.setAttribute("alt", `${data[i].name}-Art`);
 
-        const titleList = document.querySelectorAll(`.${list.name}-title-${carouselItem}`);
-        titleList.forEach(element => element.innerText = data[i].name);
+        const title = document.querySelector(`#${list.name}-title-${carouselItem}`);
+        title.innerText = data[i].name;
 
-        const platform = document.querySelector(`.${list.name}-platform-${carouselItem}`);
+        const platform = document.querySelector(`#${list.name}-platform-${carouselItem}`);
         let platformList = [];
         data[i].platforms.forEach(element => platformList.push(element.platform.name));
         platform.innerText = platformList.join(", ");
 
-        const genre = document.querySelector(`.${list.name}-genre-${carouselItem}`);
+        const genre = document.querySelector(`#${list.name}-genre-${carouselItem}`);
         let genreList = [];
         data[i].genres.forEach(element => genreList.push(element.name));
         genre.innerText = genreList.join(", ");
 
-        const release = document.querySelector(`.${list.name}-release-${carouselItem}`);
+        const release = document.querySelector(`#${list.name}-release-${carouselItem}`);
         release.innerText = data[i].released;
     }
 }
