@@ -86,4 +86,78 @@
 }
 
 @include media-md {
+    .header {
+        width: 90%;
+    }
+    .carousel {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .results {
+        width: 80%;
+        &__output {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .search {
+        width: 80%;
+        &__bar {
+            &__container {
+                width: 100%;
+
+                .entry {
+                    width: 90%;
+                }
+            }
+        }
+    }
+    .about {
+        width: 80%;
+        &__message {
+            grid-column: 1/-1;
+        }
+    }
+
+    .bio {
+        width: 80%;
+        &__card {
+            grid-template-columns: 1fr;
+
+            &__image {
+                border-radius: 2rem 2rem 0 0;
+            }
+
+            &__content {
+                grid-template-columns: 1fr;
+                border-radius: 0 0 2rem 2rem;
+
+                &__title {
+                    grid-column: 1/-1;
+                }
+                &__rating {
+                    grid-column: 1/-1;
+                    justify-self: start;
+                }
+            }
+        }
+    }
+
+    .details {
+        width: 80%;
+
+        &__card {
+            &__list {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 1fr);
+            }
+        }
+
+        &__gallery {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .reviews {
+        width: 80%;
+    }
 }
