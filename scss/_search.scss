@@ -9,7 +9,7 @@
         width: 100%;
 
         &__container {
-            @include flex-display(row, no-wrap, center, space-between);
+            @include flex-display(row, nowrap, center, space-between);
             width: 75%;
 
             .entry {
@@ -67,7 +67,7 @@
             }
 
             &__field {
-                @include flex-display(column, no-wrap, left, initial);
+                @include flex-display(column, nowrap, left, initial);
                 padding: 0.5rem;
 
                 &.meta {
