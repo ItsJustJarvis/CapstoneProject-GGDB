@@ -47,6 +47,99 @@
   grid-column: 2/-1;
 }
 
+.card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.card a {
+  height: 100%;
+  width: 100%;
+}
+.card img {
+  width: 100%;
+  height: 75%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+.card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  max-height: 25%;
+  overflow: hidden;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: #fff;
+  transition: all 0.15s ease-out;
+}
+.card__content__title {
+  color: #fff;
+  text-align: center;
+  font-family: "Audiowide", cursive;
+  padding: 0.5rem;
+}
+.card__content__details {
+  list-style-type: none;
+  text-align: left;
+  padding: 0.5rem;
+  max-height: 0;
+}
+.card__content__details li {
+  padding-top: 0.5rem;
+}
+.card:hover .card__content {
+  background-color: rgba(0, 0, 0, 0.8);
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+.card:hover .card__content__title {
+  color: #39ff14;
+}
+.card:hover .card__content__details {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.carousel__heading {
+  grid-column: 1/-1;
+  justify-self: start;
+}
+.carousel__button {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  color: #fff;
+}
+.carousel__button#prev {
+  visibility: hidden;
+}
+.carousel__button#next {
+  visibility: visible;
+}
+.carousel__button:hover {
+  color: #39ff14;
+  cursor: pointer;
+}
+
 .search {
   width: 60%;
   margin: 1.5rem auto;
