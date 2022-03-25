@@ -89,3 +89,47 @@
         }
     }
 }
+
+.results {
+    @include page-section;
+
+    &__header {
+        @include flex-display(row, wrap, center, initial);
+    }
+
+    &__views {
+        margin-left: auto;
+
+        .grid-view,
+        .list-view {
+            @include option-button;
+            width: 3rem;
+            height: 2rem;
+            padding: 0.25rem;
+            opacity: 0.5;
+            filter: grayscale(100%);
+        }
+    }
+
+    &__output {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+
+        &__placeholder {
+            grid-column: 1/-1;
+            justify-self: center;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+
+        .show-more {
+            @include option-button;
+            padding: 0.5rem;
+        }
+    }
+}
