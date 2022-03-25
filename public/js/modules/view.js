@@ -18,7 +18,9 @@ let carousels = document.querySelectorAll(".carousel");
 let gameDetails = document.querySelector(".details");
 let gallery = document.querySelector(".details__gallery");
 let reviews = document.querySelector(".reviews__output");
+let keyword = document.querySelector(".entry");
 let searchResults = document.querySelector(".results__output");
+let searchForm = document.querySelector(".search__form");
 
 /* Dynamic Generation Functions
 =================================================================================================*/
