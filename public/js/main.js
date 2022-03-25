@@ -16,8 +16,6 @@ import * as View from "./modules/view.js";
 
 import * as Request from "./modules/request.js";
 
-import * as Search from "./modules/search.js";
-
 /* View conditional checks and event listeners
 =================================================================================================*/
 

@@ -212,6 +212,9 @@ function displayReviews(data){
     }    
 }
 
+function getSearchbarInput() {
+    return keyword.value;
+}
 /* Module Exports
 =================================================================================================*/
 
