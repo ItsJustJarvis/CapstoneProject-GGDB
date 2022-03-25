@@ -20,7 +20,7 @@
         }
 
         &__content {
-            background-color: $menu-grey-dark;
+            background-color: rgba($color: #000000, $alpha: 0.6);
             width: 100%;
             padding: 2rem;
             border-radius: 0 0 2rem 2rem;
@@ -48,7 +48,7 @@
     @include page-section;
 
     &__card {
-        background: $menu-grey-dark;
+        background-color: rgba($color: #000000, $alpha: 0.6);
         padding: 1rem;
         border-radius: 2rem;
 
@@ -93,7 +93,7 @@
         row-gap: 2rem;
 
         &__card {
-            background-color: $menu-grey-dark;
+            background-color: rgba($color: #000000, $alpha: 0.6);
             color: $text-light;
             padding: 1rem;
             border-radius: 2rem;
