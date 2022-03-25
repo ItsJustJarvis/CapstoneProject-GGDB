@@ -1,5 +1,15 @@
 @use "config" as *;
 
+.about {
+    @include page-section;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__message {
+        grid-column: 2/-1;
+    }
+}
+
+
 .carousel {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
