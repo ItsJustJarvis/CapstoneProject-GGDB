@@ -41,7 +41,7 @@
         padding: 0.5rem;
         border-radius: 1rem;
         color: $text-light;
-        transition: all 0.15s ease-out;
+        @include transition-ease;
 
         &__title {
             color: $text-light;
