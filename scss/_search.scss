@@ -67,7 +67,7 @@
             }
 
             &__field {
-                @include flex-display(column, nowrap, left, initial);
+                @include flex-display(column, nowrap, flex-start, initial);
                 padding: 0.5rem;
 
                 &.meta {
