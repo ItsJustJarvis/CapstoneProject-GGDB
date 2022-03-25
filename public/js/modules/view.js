@@ -85,11 +85,11 @@ function generateGameCard(data) {
     searchResults.append(card);
 }
 
-function generateGalleryImage(data) {
+function generateGalleryImage(data, count) {
     let image = document.createElement("img");
     image.classList.add("details__gallery__image");
     image.setAttribute("src", data.image);
-    image.setAttribute("alt", "game-screenshot");
+    image.setAttribute("alt", `game-screenshot-${count}`);
 
     gallery.append(image);
 }
@@ -205,7 +205,9 @@ function displayGameDetails (data) {
 }
 
 function displayGameGallery(data) {
-    data.results.forEach(element => generateGalleryImage(element));
+    for (let i = 0; i < data.results.length; i++){
+        generateGalleryImage(data.results[i], i);
+    }
 }
 
 function displayReviews(data){
