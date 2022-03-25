@@ -20,20 +20,20 @@ import * as Request from "./modules/request.js";
 =================================================================================================*/
 
 if (View.showFilters != null){
-    View.showFilters.addEventListener("click", toggleForm);
-} 
+    View.showFilters.addEventListener("click", View.toggleForm);
+}
 
 if( View.cancelFilters != null) {
-    View.cancelFilters.addEventListener("click", toggleForm);
+    View.cancelFilters.addEventListener("click", View.toggleForm);
 }
 
 if(View.submitFilters != null){
-    View.submitFilters.addEventListener("click", toggleForm);
+    View.submitFilters.addEventListener("click", View.toggleForm);
 }
 
 if (View.submitSearch != null) {
     View.submitSearch.addEventListener("click", function () {
-        let keyword = Search.getSearchbarInput();
+        let keyword = View.getSearchbarInput();
         populateKeywordSearchResults(keyword);
     });
 }
@@ -63,7 +63,7 @@ async function populateCarousels() {
 }
 
 async function populateKeywordSearchResults(keyword){
-    clearResultsList();
+    View.clearResultsList();
     const games = await Request.keywordSearchData(keyword);
     if(games !== null){
         for(let game of games){
@@ -86,21 +86,6 @@ async function populateGamePageContent(){
 
 /* Utility functions
 =================================================================================================*/
-
-function clearResultsList() {
-    while(View.searchResults.firstChild){
-        View.searchResults.removeChild(View.searchResults.firstChild);    
-    }
-}
-
-function toggleForm(){
-    let searchForm = document.querySelector(".search__form");
-    if(!searchForm.classList.contains("open")){
-        searchForm.classList.add("open");
-    } else {
-        searchForm.classList.remove("open");
-    }
-}
 
 function getGameId() {
     const params = new Proxy(new URLSearchParams(window.location.search), {

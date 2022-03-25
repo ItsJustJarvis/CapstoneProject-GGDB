@@ -212,9 +212,31 @@ function displayReviews(data){
     }    
 }
 
+/* Utility Functions
+=================================================================================================*/
+
+function toggleVisibility(element){
+    if(!element.classList.contains("open")){
+        element.classList.add("open");
+    } else {
+        element.classList.remove("open");
+    }
+}
+
 function getSearchbarInput() {
     return keyword.value;
 }
+
+function clearResultsList() {
+    while(searchResults.firstChild){
+        searchResults.removeChild(searchResults.firstChild);    
+    }
+}
+
+function noResultsMessage() {
+    searchResults.innerText = "Sorry no results for that search. Please try a different game title.";
+}
+
 /* Module Exports
 =================================================================================================*/
 
