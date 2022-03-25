@@ -48,6 +48,10 @@ h3 {
 a {
     color: $text-light;
     text-decoration: none;
+
+    &:hover {
+        color: $accent-green;
+    }
 }
 
 p {
