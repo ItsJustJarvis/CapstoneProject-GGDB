@@ -3,7 +3,6 @@
 @include media-sm {
     .header {
         width: 90%;
-
         &__content {
             h1 {
                 padding: 1rem;
@@ -29,6 +28,9 @@
         &__bar {
             &__container {
                 width: 100%;
+                .entry {
+                    width: 90%;
+                }
             }
         }
     }
@@ -42,8 +44,15 @@
     .bio {
         width: 80%;
         &__card {
+            grid-template-columns: 1fr;
+
+            &__image {
+                border-radius: 2rem 2rem 0 0;
+            }
+
             &__content {
                 grid-template-columns: 1fr;
+                border-radius: 0 0 2rem 2rem;
 
                 &__title {
                     grid-column: 1/-1;
