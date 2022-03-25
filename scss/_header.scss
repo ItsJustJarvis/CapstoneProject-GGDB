@@ -6,7 +6,7 @@
     margin-top: 0;
 
     &__content {
-        @include flex-display(row, no-wrap, center, space-between);
+        @include flex-display(row, nowrap, center, space-between);
         padding: 1rem 0;
 
         img {
