@@ -167,7 +167,7 @@ function displayGameDetails (data) {
     metacritic.innerText = data.metacritic;
 
     const description = document.querySelector(".bio__card__content__description");
-    description.innerText = data.description_raw;
+    description.innerText = data.description_raw.replaceAll("#","");
 
     const platform = document.querySelector(".platform");
     let platformList = [];
