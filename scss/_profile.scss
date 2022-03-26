@@ -3,4 +3,9 @@
 .construction {
     @include flex-display(column, nowrap, center, space-between);
     min-height: 80vh;
+    width: 80%;
+
+    img {
+        width: 100%;
+    }
 }
