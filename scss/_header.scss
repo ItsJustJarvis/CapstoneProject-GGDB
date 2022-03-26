@@ -8,14 +8,21 @@
     &__content {
         @include flex-display(row, nowrap, center, space-between);
         padding: 1rem 0;
+        width: 100%;
 
-        img {
-            width: 100px;
+        h1 {
+            text-align: center;
+            width: 80%;
         }
 
-        .profile-image {
-            opacity: 0.5;
-            filter: grayscale(100%);
+        a {
+            width: 10%;
+            text-align: center;
+            margin: auto;
+
+            img {
+                width: 80%;
+            }
         }
     }
 }
