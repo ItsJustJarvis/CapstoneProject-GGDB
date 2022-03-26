@@ -14,14 +14,20 @@
 
             .entry {
                 height: 2rem;
-                width: 80%;
-                background-color: lightgrey;
+                width: 90%;
+                background-color: lightgray;
                 border-radius: 0.5rem;
+                border: 2px solid black;
+                outline-color: $accent-green;
+
+                &:hover,
+                &:active {
+                    border-color: $accent-green;
+                }
             }
-            .submit-button,
-            .filter-button {
-                @include option-button;
-                width: 3rem;
+            .submit-button {
+                @include button-style;
+                width: 10%;
                 height: 2rem;
                 padding: 0.25rem;
             }
