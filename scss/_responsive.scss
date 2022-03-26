@@ -12,6 +12,7 @@
             }
         }
     }
+
     .carousel {
         grid-template-columns: 1fr;
     }
@@ -71,6 +72,10 @@
             &__list {
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(8, 1fr);
+
+                li {
+                    @include flex-display(column, nowrap, flex-start, center);
+                }
             }
         }
 
