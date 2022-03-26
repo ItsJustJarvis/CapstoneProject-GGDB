@@ -415,6 +415,10 @@
   align-items: center;
   justify-content: space-between;
   min-height: 80vh;
+  width: 80%;
+}
+.construction img {
+  width: 100%;
 }
 
 @media screen and (max-width: 480px) {
