@@ -318,6 +318,7 @@
   grid-auto-rows: max-content;
 }
 .bio__card__content__title {
+  color: #39ff14;
   font-size: 2rem;
   grid-column: 1/2;
 }
@@ -360,12 +361,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
+  height: 100%;
   width: 95%;
   border-bottom: 1px solid white;
   overflow: hidden;
 }
 .details__card__list li a,
-.details__card__list li span:last-of-type {
+.details__card__list li span {
   padding: 0.5rem 0;
 }
 .details__gallery {
@@ -400,7 +402,7 @@
 .reviews__output__card {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5);
 }
@@ -573,8 +575,9 @@
   }
 }
 html {
-  background: url(../img/PolygonalBackground.svg) center/cover no-repeat fixed, #000000;
-  min-height: 100%;
+  background: url(../img/PolygonalBackground.svg) center/cover no-repeat fixed, #194345;
+  height: -webkit-fill-available;
+  height: 100%;
 }
 
 body {
