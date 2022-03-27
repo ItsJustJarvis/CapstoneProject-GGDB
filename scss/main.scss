@@ -76,3 +76,57 @@ input {
     display: none;
 }
 
+// Loader Overlay solution derived from: https://codepen.io/oksana-khristenko/pen/apzvxp
+.overlay {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #000000;
+    z-index: 99;
+    text-align: center;
+
+    &__inner {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    &__content {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        &__logo {
+            width: 100px;
+        }
+
+        &__spinner {
+            width: 75px;
+            height: 75px;
+            display: inline-block;
+            border-width: 2px;
+            border-color: rgba(255, 255, 255, 0.05);
+            border-top-color: $accent-green;
+            animation: spin 1s infinite linear;
+            border-radius: 100%;
+            border-style: solid;
+        }
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
