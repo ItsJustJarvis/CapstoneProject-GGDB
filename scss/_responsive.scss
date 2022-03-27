@@ -45,6 +45,7 @@
         width: 80%;
         &__card {
             grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr;
 
             &__image {
                 border-radius: 2rem 2rem 0 0;
