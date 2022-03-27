@@ -68,12 +68,13 @@
 
             li {
                 @include flex-display(row, wrap, center, flex-start);
+                height: 100%;
                 width: 95%;
                 border-bottom: 1px solid white;
                 overflow: hidden;
 
                 a,
-                span:last-of-type {
+                span {
                     padding: 0.5rem 0;
                 }
             }
