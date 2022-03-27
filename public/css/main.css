@@ -293,8 +293,7 @@
   border-radius: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-auto-rows: -webkit-max-content;
-  grid-auto-rows: max-content;
+  grid-template-rows: 1fr;
   align-items: center;
   justify-items: center;
   box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5);
@@ -470,6 +469,7 @@
   }
   .bio__card {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
   }
   .bio__card__image {
     border-radius: 2rem 2rem 0 0;
