@@ -23,8 +23,10 @@ window.onload = setTimeout(View.loadComplete, 1500);
 
 if (View.submitSearch != null) {
     View.submitSearch.addEventListener("click", function () {
-        let keyword = View.getSearchbarInput();
-        populateKeywordSearchResults(keyword);
+        if (validateInput()){
+            let keyword = View.getSearchbarInput();
+            populateKeywordSearchResults(keyword);
+        }
     });
 }
 
@@ -91,4 +93,12 @@ function replaceEmptyPropertyValues(data) {
             data[`${key}`] = "N/A";
         }
     }
+}
+
+function validateInput() {
+    let input = View.getSearchbarInput();
+    if (input == "" || typeof input != "string") {
+        return false;
+    }
+    return true;
 }
