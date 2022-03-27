@@ -13,6 +13,7 @@ Updated:    03/21/2022
 let showFilters = document.querySelector(".filter-button");
 let cancelFilters = document.querySelector(".cancel-filters");
 let submitFilters = document.querySelector(".submit-filters");
+let loadOverlay = document.querySelector(".overlay");
 let submitSearch = document.querySelector(".submit-button");
 let carousels = document.querySelectorAll(".carousel");
 let gameDetails = document.querySelector(".details");
@@ -221,11 +222,15 @@ function displayReviews(data){
 /* Utility Functions
 =================================================================================================*/
 
+function loadComplete(){
+    toggleVisibility(loadOverlay);
+}
+
 function toggleVisibility(element){
-    if(!element.classList.contains("open")){
-        element.classList.add("open");
+    if(!element.classList.contains("loaded")){
+        element.classList.add("loaded");
     } else {
-        element.classList.remove("open");
+        element.classList.remove("loaded");
     }
 }
 
@@ -254,6 +259,7 @@ export {
     submitSearch,
     carousels,
     gameDetails,
+    loadComplete,
     generateGameCard, 
     generateGalleryImage, 
     generateReviewCard,

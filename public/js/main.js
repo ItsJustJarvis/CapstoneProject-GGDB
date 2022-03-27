@@ -19,17 +19,7 @@ import * as Request from "./modules/request.js";
 /* View conditional checks and event listeners
 =================================================================================================*/
 
-if (View.showFilters != null){
-    View.showFilters.addEventListener("click", View.toggleForm);
-}
-
-if( View.cancelFilters != null) {
-    View.cancelFilters.addEventListener("click", View.toggleForm);
-}
-
-if(View.submitFilters != null){
-    View.submitFilters.addEventListener("click", View.toggleForm);
-}
+window.onload = setTimeout(View.loadComplete, 2000);
 
 if (View.submitSearch != null) {
     View.submitSearch.addEventListener("click", function () {
