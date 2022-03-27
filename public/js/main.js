@@ -19,7 +19,7 @@ import * as Request from "./modules/request.js";
 /* View conditional checks and event listeners
 =================================================================================================*/
 
-window.onload = setTimeout(View.loadComplete, 2000);
+window.onload = setTimeout(View.loadComplete, 1500);
 
 if (View.submitSearch != null) {
     View.submitSearch.addEventListener("click", function () {
