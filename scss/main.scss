@@ -8,14 +8,12 @@
 
 html {
     background: url(../img/PolygonalBackground.svg) center/cover no-repeat fixed, darken($blue-green, 10%);
-    height: -webkit-fill-available;
     height: 100%;
 }
 
 body {
     position: relative;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    height: 100%;
     color: $text-light;
     font-family: "Roboto", sans-serif;
     line-height: 1.25;
