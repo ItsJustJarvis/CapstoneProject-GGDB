@@ -154,7 +154,7 @@ function displayCarouselCard(list, data) {
 
 function displayGameDetails (data) {
 
-    const image = document.querySelector(".bio__card__image");
+    const image = document.querySelector(".game-image");
     image.setAttribute("src", data.background_image);
 
     const title = document.querySelector(".bio__card__content__title");
