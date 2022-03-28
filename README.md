@@ -4,7 +4,7 @@
 
 <br/>
 
-### **Live Deployment:** https://ggdb-goodgamedatabase.herokuapp.com/index.html
+### **Live Deployment:** https://ggdb-goodgamedatabase.herokuapp.com
 
 
 ### **Current Version:** Complete Product
