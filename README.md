@@ -4,12 +4,10 @@
 
 <br/>
 
-### INITIAL TEST DEPLOYMENT: https://ggdb-goodgamedatabase.herokuapp.com/
-
-*To run and test this code on a local machine, please switch to the local-test branch and follow the readme instructions.*
+### **Live Deployment:** https://ggdb-goodgamedatabase.herokuapp.com/index.html
 
 
-### **Current Version:** MVP - Minimum Viable Product
+### **Current Version:** Complete Product
 
 ---
 
@@ -24,31 +22,17 @@ https://xd.adobe.com/view/1a534ba8-25fd-4917-840f-22a292466d72-4f00/?fullscreen
 
 <br/>
 
-### **Fixes and Updates required:**
+### **Intended Feature Updates:**
 
 <br/>
 
-> **Responsive design** - Current version only properly displayed on Desktop. I have used grid/flex displays so it should only require a few style-rule changes to prepare mobile/tablet displays. This will be a main priority for the Complete Product.
+> **User Profile Management** - I will be exploring User-Profile implementation and adding game-list management and game suggestions based on interests
 
-> **Aesthetic Fixes** - More styling required including: adding more brand-colours, standardizing image sizes, improving visual separation
+> **In-depth search filtering** - Filters will be added to search for games based on: developer, publisher, platform, esrb rating, genre, release date, metacritic rating etc.
 
-> **Code Reduction/Refactoring** - Code is in need of general reduction and refactoring to meet my expecations for modularity and "clean" code. There may be some redundant code present. Additionally, I will be re-organizing my JavaScript code into modules to create a better separation of concerns.
+> **Search-result view changes** - Search result view changes will be added to present data in a grid or list view respectively
 
-<br/>
-
-### **Features not included for this iteration:**
-
-<br/>
-
-> **In-depth search filtering** - I have created the UI required, but removed it until functional for complete product
-
-> **Search-result view changes (Grid vs. List)** - I have removed these UI elements until I complete the programming required to change presentation properly
-
-> **Carousel-scrolling for curated game lists** - I need to create the required code/programming to change and animate the carousel lists (Currently presenting top 4 for each category)
-
-> **Database implementation** - I plan to add more database usage to reduce API reliance and add more features to complete product
-
-> **User Profile Management** - If time allows, I will be exploring User-Profile implementation and adding game-list management and game suggestions based on interests
+> **Carousel-scrolling for curated game lists** - Curated Game Lists on home screen currently present the top four games in each category, I intend to add a carousel scroll feature to scroll through these results
 
 <br/>
 
@@ -105,10 +89,6 @@ While some of these serve as competitors, a few of them are also open-source and
 
 GGDB is intended as a discovery service, and informative tool for those interested in gaming or who are currently involved in the industry. Typical use cases include:
 
--   Find quality reviews for a game you are interested in
--   Keep track of recent releases (notifications)
--   See the most anticipated upcoming games
--   Find specific details regarding a game (including platforms, number of players, genre etc.)
--   Keep track of your favorite games in one place regardless of platform
--   Get help finding a new game based on personal preference
--   Compare games you like with your friends
+-   See the top games in various categories including: popular, new releases, and most anticipated
+-   Find specific details regarding a game including platforms, number of players, genre etc. as well as game screenshot galleries
+-   Find quality reviews for a game you are interested in linked to source material (GameSpot)
