@@ -558,9 +558,16 @@
   }
   .bio__card {
     grid-template-columns: 1fr;
+    grid-template-rows: -webkit-max-content;
+    grid-template-rows: max-content;
   }
   .bio__card__image {
     border-radius: 2rem 2rem 0 0;
+  }
+  .bio__card__image .game-image {
+    border-radius: 2rem 2rem 0 0;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .bio__card__content {
     grid-template-columns: 1fr;
