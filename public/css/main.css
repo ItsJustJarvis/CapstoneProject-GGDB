@@ -35,7 +35,7 @@
   margin: auto;
 }
 .header__content a img {
-  width: 80%;
+  width: 60%;
 }
 
 .about {
@@ -441,6 +441,9 @@
   .header__content a {
     width: 20%;
   }
+  .header__content a img {
+    width: 80%;
+  }
 
   .carousel {
     grid-template-columns: 1fr;
@@ -599,6 +602,7 @@
 html {
   background: url(../img/PolygonalBackground.svg) center/cover no-repeat fixed, #194345;
   height: 100%;
+  width: 100%;
 }
 
 body {
