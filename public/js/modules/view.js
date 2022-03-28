@@ -2,7 +2,7 @@
 Author:     Reeve Jarvis
 Project:    GGDB-Good Game Database
 Filename:   view.js
-Updated:    03/21/2022
+Updated:    03/27/2022
 */
 
 "use strict";
