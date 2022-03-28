@@ -132,9 +132,15 @@
         width: 80%;
         &__card {
             grid-template-columns: 1fr;
+            grid-template-rows: max-content;
 
             &__image {
                 border-radius: 2rem 2rem 0 0;
+
+                .game-image {
+                    border-radius: 2rem 2rem 0 0;
+                    object-fit: contain;
+                }
             }
 
             &__content {
