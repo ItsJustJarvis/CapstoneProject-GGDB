@@ -96,7 +96,6 @@ function setDates(gameList) {
         const startDate = {year: aYearAgo.getFullYear(), month: aYearAgo.getMonth()+1, date: aYearAgo.getDate() };
         gameList.startDate = `${startDate.year}-${startDate.month < 10 ? "0" + startDate.month : startDate.month}-${startDate.date < 10 ? "0" + startDate.date : startDate.date}`;
         gameList.endDate = `${now.year}-${now.month < 10 ? "0" + now.month : now.month}-${now.date < 10 ? "0" + now.date : now.date}`;
-        console.log("POPULAR: " + `${gameList.startDate} ${gameList.endDate}`);
     }
 
     if (gameList.name == "new"){
@@ -105,7 +104,6 @@ function setDates(gameList) {
         const startDate = {year: aMonthAgo.getFullYear(), month: aMonthAgo.getMonth()+1, date: aMonthAgo.getDate() };
         gameList.startDate = `${startDate.year}-${startDate.month < 10 ? "0" + (startDate.month) : (startDate.month)}-${startDate.date < 10 ? "0" + startDate.date : startDate.date}`;
         gameList.endDate = `${now.year}-${now.month < 10 ? "0" + now.month : now.month}-${now.date < 10 ? "0" + now.date : now.date}`;
-        console.log("NEW: " + `${gameList.startDate} ${gameList.endDate}`);
     }
 
     if (gameList.name == "anticipated"){
@@ -114,7 +112,6 @@ function setDates(gameList) {
         const endDate = {year: aYearFromNow.getFullYear(), month: aYearFromNow.getMonth()+1, date: aYearFromNow.getDate() };
         gameList.startDate = `${now.year}-${now.month < 10 ? "0" + now.month : now.month}-${now.date < 10 ? "0" + now.date : now.date}`;
         gameList.endDate = `${endDate.year}-${endDate.month < 10 ? "0" + endDate.month : endDate.month}-${endDate.date < 10 ? "0" + endDate.date : endDate.date}`;
-        console.log("ANTICIPATED: " + `${gameList.startDate} ${gameList.endDate}`);
     }
 }
 
