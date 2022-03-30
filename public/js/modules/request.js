@@ -89,18 +89,20 @@ function setDates(gameList) {
     
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth() + 1;
+    let month = today.getMonth() + 1;
     let date = today.getDate();
+
+    if(month == 2 || month == 3 && date >= 29){
+        month += 1;
+        date = 1;
+    }
 
     if (gameList.name == "popular"){
         gameList.startDate = `${year - 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
         gameList.endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
     }
 
-    if (gameList.name == "new"){       
-        if(!isALeapYear(year) && month == 3 && date == 29){
-            date = today.getDate() - 1;
-        }
+    if (gameList.name == "new"){  
         gameList.startDate = `${year}-${month < 10 ? "0" + (month - 1) : (month - 1)}-${date < 10 ? "0" + date : date}`;
         gameList.endDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
     }
@@ -109,10 +111,6 @@ function setDates(gameList) {
         gameList.startDate = `${year}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
         gameList.endDate = `${year + 1}-${month < 10 ? "0" + month : month}-${date < 10 ? "0" + date : date}`;
     }
-}
-
-function isALeapYear(year) {
-    return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 }
 
 /* Module Exports
