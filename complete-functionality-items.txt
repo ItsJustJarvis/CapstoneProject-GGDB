@@ -1,7 +1,34 @@
 Carousel Scroll Buttons:
 
-    <button class="carousel__button" id="prev"><i class="fas fa-angle-left fa-3x"></i></button>
-    <button class="carousel__button" id="next"><i class="fas fa-angle-right fa-3x"></i></button>
+position: relative;
+    
+    &__button {
+        position: absolute;
+        background-color: rgba($color: #ffffff, $alpha: 0);
+        border-style: none;
+        color: $text-light;
+        font-size: 1.5rem;
+
+        &#prev {
+            top: 50%;
+            left: -10%;
+            visibility: hidden;
+        }
+        &#next {
+            top: 50%;
+            right: -10%;
+            visibility: visible;
+        }
+
+        &:hover {
+            color: $accent-green;
+            cursor: pointer;
+        }
+    }
+    
+     <button class="carousel__button" id="prev"><i class="fas fa-angle-left fa-3x"></i></button>
+     <button class="carousel__button" id="next"><i class="fas fa-angle-right fa-3x"></i></button>
+    
 
 
 Search Filter form:

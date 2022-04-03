@@ -91,22 +91,4 @@
         grid-column: 1/-1;
         justify-self: start;
     }
-
-    &__button {
-        background-color: rgba($color: #ffffff, $alpha: 0);
-        border-style: none;
-        color: $text-light;
-
-        &#prev {
-            visibility: hidden;
-        }
-        &#next {
-            visibility: visible;
-        }
-
-        &:hover {
-            color: $accent-green;
-            cursor: pointer;
-        }
-    }
 }
