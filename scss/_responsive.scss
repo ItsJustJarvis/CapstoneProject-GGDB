@@ -10,7 +10,7 @@
             a {
                 width: 20%;
                 img {
-                    width: 80%;
+                    width: 70%;
                 }
             }
         }
@@ -101,6 +101,15 @@
 @include media-md {
     .header {
         width: 90%;
+
+        &__content {
+        
+            a {
+                img {
+                    width: 70%;
+                }
+            }
+        }
     }
     .carousel {
         grid-template-columns: 1fr 1fr;
