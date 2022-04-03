@@ -35,7 +35,7 @@
   margin: auto;
 }
 .header__content a img {
-  width: 60%;
+  width: 50%;
 }
 
 .about {
@@ -129,21 +129,6 @@
 .carousel__heading {
   grid-column: 1/-1;
   justify-self: start;
-}
-.carousel__button {
-  background-color: rgba(255, 255, 255, 0);
-  border-style: none;
-  color: #fff;
-}
-.carousel__button#prev {
-  visibility: hidden;
-}
-.carousel__button#next {
-  visibility: visible;
-}
-.carousel__button:hover {
-  color: #39ff14;
-  cursor: pointer;
 }
 
 .search {
@@ -411,9 +396,6 @@
   border-radius: 2rem;
   box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5);
 }
-.reviews__output__card a:hover {
-  color: #1b03a3;
-}
 
 .construction {
   display: flex;
@@ -442,7 +424,7 @@
     width: 20%;
   }
   .header__content a img {
-    width: 80%;
+    width: 70%;
   }
 
   .carousel {
@@ -526,6 +508,9 @@
 @media screen and (min-width: 481px) and (max-width: 961px) {
   .header {
     width: 90%;
+  }
+  .header__content a img {
+    width: 70%;
   }
 
   .carousel {
@@ -648,7 +633,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #1b03a3;
+  color: #137a00;
 }
 
 p {
