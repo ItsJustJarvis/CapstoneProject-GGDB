@@ -51,7 +51,7 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: $accent-blue;
+        color: darken($accent-green, 30%);
     }
 }
 
