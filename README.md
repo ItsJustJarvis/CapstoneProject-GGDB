@@ -7,7 +7,7 @@
 ### **Live Deployment:** https://ggdb-goodgamedatabase.herokuapp.com
 
 
-### **Current Version:** Complete Product
+### **Current Version:** 1.0
 
 ---
 
