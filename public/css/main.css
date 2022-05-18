@@ -5,12 +5,11 @@
 }
 
 .header {
-  width: 60%;
   margin: 1.5rem auto;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  width: 70%;
+  width: 80%;
   margin-top: 0;
 }
 .header:last-of-type {
@@ -232,7 +231,7 @@
 }
 
 .results {
-  width: 60%;
+  width: 70%;
   margin: 1.5rem auto;
   display: grid;
   grid-template-columns: 1fr;
