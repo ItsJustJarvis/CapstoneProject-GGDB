@@ -88,6 +88,9 @@
 }
 .card__content__title {
   color: #fff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   text-align: center;
   font-family: "Audiowide", cursive;
   padding: 0.5rem;
@@ -95,7 +98,7 @@
 .card__content__details {
   list-style-type: none;
   text-align: left;
-  padding: 0.5rem;
+  padding: 1rem;
   max-height: 0;
 }
 .card__content__details li {
