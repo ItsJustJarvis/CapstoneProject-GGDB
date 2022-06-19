@@ -45,6 +45,7 @@
 
         &__title {
             color: $text-light;
+            height: fit-content;
             text-align: center;
             font-family: "Audiowide", cursive;
             padding: 0.5rem;
@@ -53,7 +54,7 @@
         &__details {
             list-style-type: none;
             text-align: left;
-            padding: 0.5rem;
+            padding: 1rem;
             max-height: 0;
 
             li {
