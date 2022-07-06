@@ -4,6 +4,8 @@
 
 <br/>
 
+### **Case Study:** https://learndigital.dev/students/reeve-jarvis/
+
 ### **Live Deployment:** https://ggdb-goodgamedatabase.herokuapp.com
 
 
